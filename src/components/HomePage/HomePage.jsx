@@ -21,12 +21,8 @@ const Homepage = () => {
               </div>
             </div>
             <div className="slide-body">
-              <h3>
-                "Finirà che brilleranno alla luce del giorno <br />
-                con un pò di benzina e un accendino!"
-              </h3>
               <Button variant="outline-primary">
-                <img src={BookIcons} alt="" />
+                <img src={BookIcons} alt="Book Icon" className="book-icon" />
                 Read
               </Button>
             </div>

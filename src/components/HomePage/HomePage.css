@@ -1,3 +1,5 @@
+/*GENERALI*/
+
 .container {
   padding: 0px !important;
 }
@@ -19,32 +21,88 @@
 .swiper {
   height: 100%;
 }
+/*SOTTOLINEATURA ANCOR*/
+.ancor-header {
+  p {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
 
-/*SLIDE*/
+  p::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    width: 50px;
+    height: 15px;
+    background: url("../../assets/icons/curved-line.svg") no-repeat center;
+    background-size: contain;
+    transform: translateX(-50%);
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 0.3s ease-in-out;
+  }
+
+  p:hover::after {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* SLIDE 1 */
 .slide-1 {
   background-image: url("../../assets/img/viaggioIntStellar/cover.jpg");
   background-size: cover;
   filter: brightness(0.8);
   color: white;
   border-radius: 7px;
-}
 
-.slide-header {
-  display: flex;
-  justify-content: space-around;
-  padding-block: 20px;
-}
-.ancor-header {
-  display: flex;
-  gap: 90px;
-}
+  /* --HEADER-- */
+  .slide-header {
+    display: flex;
+    justify-content: space-around;
+    padding-block: 20px;
+    font-family: "AnimeFont", sans-serif;
+  }
 
-.slide-1 button img {
-  width: 24px;
-}
-.slide-1 button {
-  margin-left: 10em;
-}
-.slide-body h3 {
-  margin-top: 1.5em;
+  .ancor-header {
+    display: flex;
+    gap: 90px;
+  }
+
+  /* ---BODY---*/
+  .slide-body {
+    position: relative;
+  }
+
+  /* Button */
+  button {
+    position: absolute;
+    top: 90px;
+    left: 290px;
+    color: #e0e0e0;
+    font-family: "AnimeFont", sans-serif;
+    border-radius: 3px;
+    border: 2px solid #e0e0e0;
+    transform: rotate(-6deg);
+    letter-spacing: 0.2em;
+    padding-inline: 20px;
+    display: flex;
+    gap: 9px;
+  }
+
+  button img {
+    width: 24px;
+  }
+
+  button:hover {
+    letter-spacing: 1em;
+    background-color: #e0e0e0;
+    border-color: black;
+    color: black;
+  }
+
+  .book-icon {
+    filter: invert(86%) sepia(3%) saturate(16%) hue-rotate(180deg)
+      brightness(94%) contrast(87%);
+  }
 }
