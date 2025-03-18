@@ -10,3 +10,6 @@
   font-family: "AnimeFont";
   src: url("../src/assets/fonts/Anime\ Inept.otf") format("opentype");
 }
+#root {
+  background-image: url("../src/assets/img/bg-home/comic-book-page-background-with-radial-effect-black-and-white-retro-illustration-vector.jpg");
+}

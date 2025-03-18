@@ -1,3 +1,48 @@
-.prova {
+.nav-body {
   height: 11vh;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(25px);
+  border-bottom: 3px solid #b80217;
+}
+.nav-link {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 1.3em;
+
+  position: relative;
+}
+
+.navbar-nav {
+  margin: auto;
+  font-family: "AnimeFont", sans-serif;
+  display: flex;
+  gap: 80px;
+}
+
+.navbar a:not(:last-child):after {
+  content: "|";
+  position: absolute;
+  right: -40px;
+  color: #000000;
+}
+.navbar a:not(:last-child):before {
+  content: "|";
+  position: absolute;
+  right: -39px;
+  color: #69696948;
+}
+.navbar a:hover {
+  letter-spacing: 10px;
+  background-color: #e0e0e0;
+  border: 2px solid black;
+  color: black;
+}
+/* Applica rotate(-5deg) al primo, terzo e quinto elemento */
+.navbar a:nth-child(odd):hover {
+  transform: rotate(-5deg);
+}
+
+/* Applica rotate(10deg) al secondo e quarto elemento */
+.navbar a:nth-child(even):hover {
+  transform: rotate(5deg);
 }
