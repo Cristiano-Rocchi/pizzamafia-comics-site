@@ -1,0 +1,50 @@
+.container {
+  padding: 0px !important;
+}
+.background-home {
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-home {
+  width: 60%;
+  height: 60%;
+  border-radius: 7px;
+  box-shadow: 44px 50px 50px 50px rgba(17, 17, 17, 0.51);
+}
+
+.swiper {
+  height: 100%;
+}
+
+/*SLIDE*/
+.slide-1 {
+  background-image: url("../../assets/img/viaggioIntStellar/cover.jpg");
+  background-size: cover;
+  filter: brightness(0.8);
+  color: white;
+  border-radius: 7px;
+}
+
+.slide-header {
+  display: flex;
+  justify-content: space-around;
+  padding-block: 20px;
+}
+.ancor-header {
+  display: flex;
+  gap: 90px;
+}
+
+.slide-1 button img {
+  width: 24px;
+}
+.slide-1 button {
+  margin-left: 10em;
+}
+.slide-body h3 {
+  margin-top: 1.5em;
+}
