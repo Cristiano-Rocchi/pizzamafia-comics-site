@@ -5,11 +5,18 @@
   margin: 0;
   padding: 0;
 }
+/*SFONDO*/
+#root {
+  background-image: url("/src/assets/img/bg-home/bg-home.png");
+  background-size: cover;
+}
+
 /*-----FONT-----*/
 @font-face {
   font-family: "AnimeFont";
   src: url("../src/assets/fonts/Anime\ Inept.otf") format("opentype");
 }
-#root {
-  background-image: url("../src/assets/img/bg-home/comic-book-page-background-with-radial-effect-black-and-white-retro-illustration-vector.jpg");
+@font-face {
+  font-family: "LogoFont";
+  src: url("../src/assets/fonts/WhoDares.otf") format("opentype");
 }

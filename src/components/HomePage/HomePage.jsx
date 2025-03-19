@@ -31,6 +31,11 @@ const Homepage = () => {
                   Read
                 </Button>
               </div>
+              <div className="slide-footer">
+                <p className="comics-info">
+                  {element.anno} | {element.produzione}
+                </p>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
