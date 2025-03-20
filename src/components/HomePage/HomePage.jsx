@@ -5,11 +5,21 @@ import "./HomePage.css";
 import "swiper/css";
 import BookIcons from "../../assets/icons/book.png";
 import DataComics from "../../Data/DataComics";
+import { motion } from "framer-motion";
 
 const Homepage = () => {
   return (
     <div className="background-home">
-      <div className="card-home">
+      <motion.div
+        className="card-home"
+        initial={{ y: -200, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+          type: "spring",
+          stiffness: 150,
+          damping: 10,
+        }}
+      >
         <Swiper className="mySwiper">
           {DataComics.map((element, index) => (
             <SwiperSlide
@@ -39,7 +49,7 @@ const Homepage = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </motion.div>
     </div>
   );
 };

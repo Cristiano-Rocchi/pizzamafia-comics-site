@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import TitleArrow from "../../assets/icons/titlearrow.svg";
 import DataComics from "../../Data/DataComics";
-
+import { motion } from "framer-motion";
 import "../navbar/Navbar.css";
 
 const MyNavbar = () => {
@@ -44,7 +44,16 @@ const MyNavbar = () => {
 
       {/* -----MODALE----- */}
       {showModalTitle && (
-        <div className="custom-modal">
+        <motion.div
+          className="custom-modal"
+          initial={{ x: -200, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 17,
+          }}
+        >
           <div className="modal-comics">
             <h4>Fumetti</h4>
             <div className="modal-style">
@@ -81,7 +90,7 @@ const MyNavbar = () => {
             </div>
             <p> Vedi tutti</p>
           </div>
-        </div>
+        </motion.div>
       )}
     </>
   );
