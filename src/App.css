@@ -20,3 +20,16 @@
   font-family: "LogoFont";
   src: url("../src/assets/fonts/WhoDares.otf") format("opentype");
 }
+
+/*-----ANIMATION-----*/
+@keyframes moveArrowVertical {
+  0% {
+    transform: rotate(-90deg) translateX(0);
+  }
+  50% {
+    transform: rotate(-90deg) translateX(10px);
+  }
+  100% {
+    transform: rotate(-90deg) translateX(0);
+  }
+}
