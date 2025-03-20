@@ -11,11 +11,21 @@ const MyNavbar = () => {
       <h3 className="logo-navbar">PIZZAMAFIA COMICS !</h3>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Info</Nav.Link>
-          <Nav.Link href="#link">Link</Nav.Link>
-          <Nav.Link href="#link">Download</Nav.Link>
-          <Nav.Link href="#link">Shop</Nav.Link>
+          <Nav className="nav2" href="#home">
+            Home
+          </Nav>
+          <Nav className="nav2" href="#link">
+            Info
+          </Nav>
+          <Nav className="nav2" href="#link">
+            Link
+          </Nav>
+          <Nav className="nav2" href="#link">
+            Download
+          </Nav>
+          <Nav className="nav2" href="#link">
+            Shop
+          </Nav>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

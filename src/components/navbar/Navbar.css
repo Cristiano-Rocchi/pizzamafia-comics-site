@@ -9,7 +9,7 @@
   backdrop-filter: blur(25px);
   border-bottom: 3px solid #b80217;
 }
-.nav-link {
+.nav2 {
   color: #e0e0e0;
   text-decoration: none;
   font-size: 1.3em;
@@ -24,30 +24,30 @@
   gap: 80px;
 }
 
-.navbar a:not(:last-child):after {
+.nav2:not(:last-child):after {
   content: "|";
   position: absolute;
   right: -40px;
   color: #000000;
 }
-.navbar a:not(:last-child):before {
+.nav2:not(:last-child):before {
   content: "|";
   position: absolute;
   right: -39px;
   color: #69696948;
 }
-.navbar a:hover {
+.nav2:hover {
   letter-spacing: 10px;
   background-color: #e0e0e0;
   border: 2px solid black;
   color: black;
 }
 /* Applica rotate(-5deg) al primo, terzo e quinto elemento */
-.navbar a:nth-child(odd):hover {
+.nav2:nth-child(odd):hover {
   transform: rotate(-5deg);
 }
 
 /* Applica rotate(10deg) al secondo e quarto elemento */
-.navbar a:nth-child(even):hover {
+.nav2:nth-child(even):hover {
   transform: rotate(5deg);
 }
