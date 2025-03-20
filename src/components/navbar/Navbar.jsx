@@ -55,7 +55,7 @@ const MyNavbar = () => {
           }}
         >
           <div className="modal-comics">
-            <h4>Fumetti</h4>
+            <h4>• Fumetti</h4>
             <div className="modal-style">
               <img
                 src={DataComics[0].cover}
@@ -70,10 +70,24 @@ const MyNavbar = () => {
               />
               <p>{DataComics[1].titolo}</p>
             </div>
-            <p> Vedi tutti</p>
+            <p>
+              Vedi tutti
+              <span>
+                <button className="button-modal">
+                  <img src={TitleArrow} alt="arrowicon" />
+                </button>
+              </span>
+            </p>
           </div>
+          <div
+            style={{
+              borderTop: "2px solid black",
+              width: "90%",
+              margin: "auto",
+            }}
+          />
           <div className="modal-comics">
-            <h4>Disegni</h4>
+            <h4>• Disegni</h4>
             <div className="modal-style">
               <img
                 src={DataComics[0].cover}
@@ -88,7 +102,14 @@ const MyNavbar = () => {
               />
               <p>{DataComics[1].titolo}</p>
             </div>
-            <p> Vedi tutti</p>
+            <p>
+              Vedi tutti
+              <span>
+                <button className="button-modal">
+                  <img src={TitleArrow} alt="arrowicon" />
+                </button>
+              </span>
+            </p>
           </div>
         </motion.div>
       )}

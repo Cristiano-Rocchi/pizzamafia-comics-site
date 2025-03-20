@@ -5,10 +5,8 @@
 }
 .background-home {
   height: 89vh;
-
   background-size: cover;
   display: flex;
-
   justify-content: center;
   align-items: center;
   position: relative;
@@ -128,4 +126,10 @@
     font-size: 1.1em;
     color: #e0e0e0;
   }
+}
+
+.custom-modal-story {
+  position: absolute;
+  background-color: black;
+  right: 100px;
 }
