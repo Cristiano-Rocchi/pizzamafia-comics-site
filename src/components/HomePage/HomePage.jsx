@@ -1,14 +1,35 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "react-bootstrap";
-import { Swiper, SwiperSlide } from "swiper/react";
+
 import "./HomePage.css";
-import "swiper/css";
+
 import BookIcons from "../../assets/icons/book.png";
 import DataComics from "../../Data/DataComics";
+
+//librerie
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import { motion } from "framer-motion";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 const Homepage = () => {
-  const [showModalStory, setShowModalStory] = useState(false);
+  const renderCastContent = (cast) => {
+    return (
+      <div className="cast-tooltip">
+        <h4>Cast</h4>
+        {cast.map((member, index) => (
+          <div key={index} className="cast-member">
+            <img src={member.foto} alt={member.nome} className="cast-photo" />
+            <div className="cast-info">
+              <strong>{member.nome}</strong>
+              <p>{member.descrizione}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  };
   return (
     <>
       <div className="background-home">
@@ -25,6 +46,7 @@ const Homepage = () => {
           <Swiper className="mySwiper">
             {DataComics.map((element, index) => (
               <SwiperSlide
+                key={index}
                 className="slide-1"
                 style={{ backgroundImage: `url(${element.cover})` }}
               >
@@ -33,28 +55,26 @@ const Homepage = () => {
                     <h2>{element.titolo}</h2>
                   </div>
                   <div className="ancor-header">
-                    <p onClick={() => setShowModalStory(!showModalStory)}>
-                      Storyline
-                    </p>
-                    <p>Cast</p>
-                  </div>
-                  {/* -----MODALI----- */}
-                  {showModalStory && (
-                    <motion.div
-                      className="custom-modal"
-                      initial={{ y: -200, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 17,
-                      }}
+                    <Tippy
+                      className="tippy-story"
+                      content={element.storyline}
+                      placement="bottom"
+                      delay={100}
+                      interactive={true}
+                      trigger="click"
                     >
-                      <div className="custom-modal-story">
-                        {element.storyline}
-                      </div>
-                    </motion.div>
-                  )}
+                      <h5>Storyline</h5>
+                    </Tippy>
+                    <Tippy
+                      className="tippy-cast"
+                      content={renderCastContent(element.cast)}
+                      placement="bottom"
+                      delay={100}
+                      interactive={true}
+                    >
+                      <h5>Cast</h5>
+                    </Tippy>
+                  </div>
                 </div>
                 <div className="slide-body">
                   <Button variant="outline-primary">
@@ -79,4 +99,5 @@ const Homepage = () => {
     </>
   );
 };
+
 export default Homepage;
