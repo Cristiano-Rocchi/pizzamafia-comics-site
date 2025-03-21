@@ -20,13 +20,19 @@ const Homepage = () => {
         <h4>Cast</h4>
         {cast.map((member, index) => (
           <div key={index} className="cast-member">
-            <img src={member.foto} alt={member.nome} className="cast-photo" />
+            <img
+              style={{ width: "80px" }}
+              src={member.foto}
+              alt={member.nome}
+              className="cast-photo"
+            />
             <div className="cast-info">
-              <strong>{member.nome}</strong>
+              <p>{member.nome}</p>
               <p>{member.descrizione}</p>
             </div>
           </div>
         ))}
+        <p className="text-end mb-0">Vedi Tutti</p>
       </div>
     );
   };
@@ -61,7 +67,6 @@ const Homepage = () => {
                       placement="bottom"
                       delay={100}
                       interactive={true}
-                      trigger="click"
                     >
                       <h5>Storyline</h5>
                     </Tippy>

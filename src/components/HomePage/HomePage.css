@@ -127,7 +127,10 @@
     color: #e0e0e0;
   }
 }
-
+.tippy-box,
+.tippy-content {
+  border-radius: 5px !important;
+}
 .tippy-story .tippy-content {
   background-color: black;
   font-size: 1.1em;
@@ -135,4 +138,16 @@
 .tippy-cast .tippy-content {
   background-color: black;
   font-size: 1.1em;
+  max-height: 310px;
+  overflow-y: auto;
+}
+.cast-member {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.cast-info p:first-child {
+  font-weight: bold;
+  border-bottom: 1px solid #e0e0e0;
 }

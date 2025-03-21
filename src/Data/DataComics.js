@@ -3,6 +3,10 @@ import coverVecchioCinese from "../assets/img/vecchioCinese/FINITO4.jpg";
 import coverPeopleFucked from "../assets/img/peopleFucked/Image053.png";
 import coverOdiEtAmo from "../assets/img/odiEtAmo/cover.jpg";
 
+//characters
+import kunVerme from "../assets/img/viaggioIntStellar/character/kunVerme.png";
+import pizzamafia from "../assets/img/viaggioIntStellar/character/pizzamafia.png";
+
 const DataComics = [
   {
     titolo: "Viaggio Interstellare",
@@ -14,13 +18,23 @@ const DataComics = [
     cast: [
       {
         nome: "Kun il Verme",
-        foto: "bo",
+        foto: kunVerme,
         descrizione: "Kun è un verme che vive nel terreno del pianeta Terra",
       },
       {
-        nome: "Kun il Verme",
-        foto: "bo",
-        descrizione: "Kun è un verme che vive nel terreno del pianeta Terra",
+        nome: "pizzamafia",
+        foto: pizzamafia,
+        descrizione: "pizzamafia è pizzamfia",
+      },
+      {
+        nome: "pizzamafia",
+        foto: pizzamafia,
+        descrizione: "pizzamafia è pizzamfia",
+      },
+      {
+        nome: "pizzamafia",
+        foto: pizzamafia,
+        descrizione: "pizzamafia è pizzamfia",
       },
     ],
   },
