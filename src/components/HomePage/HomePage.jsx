@@ -1,8 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-
 import "./HomePage.css";
-
 import BookIcons from "../../assets/icons/book.png";
 import DataComics from "../../Data/DataComics";
 
@@ -12,8 +10,11 @@ import "swiper/css";
 import { motion } from "framer-motion";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
+import { Navigation } from "swiper/modules";
+import "swiper/css/navigation";
 
 const Homepage = () => {
+  //MODALI CAST E STORYLINE
   const renderCastContent = (cast) => {
     return (
       <div className="cast-tooltip">
@@ -36,6 +37,7 @@ const Homepage = () => {
       </div>
     );
   };
+
   return (
     <>
       <div className="background-home">
@@ -49,7 +51,21 @@ const Homepage = () => {
             damping: 10,
           }}
         >
-          <Swiper className="mySwiper">
+          <Swiper
+            className="mySwiper"
+            rewind={true}
+            navigation={true}
+            modules={[Navigation]}
+            onInit={(swiper) => {
+              // Manipola il DOM dopo l'inizializzazione dello Swiper
+              const nextButton = swiper.navigation.nextEl;
+              const prevButton = swiper.navigation.prevEl;
+
+              // Rimuovi le icone predefinite
+              nextButton.innerHTML = ">"; // Sostituisci con il testo che vuoi
+              prevButton.innerHTML = "<"; // Sostituisci con il testo che vuoi
+            }}
+          >
             {DataComics.map((element, index) => (
               <SwiperSlide
                 key={index}
@@ -67,6 +83,7 @@ const Homepage = () => {
                       placement="bottom"
                       delay={100}
                       interactive={true}
+                      animation="bounce"
                     >
                       <h5>Storyline</h5>
                     </Tippy>
@@ -76,6 +93,7 @@ const Homepage = () => {
                       placement="bottom"
                       delay={100}
                       interactive={true}
+                      animation="bounce"
                     >
                       <h5>Cast</h5>
                     </Tippy>

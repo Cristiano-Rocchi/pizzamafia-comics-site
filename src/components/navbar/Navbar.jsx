@@ -4,12 +4,20 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import TitleArrow from "../../assets/icons/titlearrow.svg";
 import DataComics from "../../Data/DataComics";
+//librerie
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 import { motion } from "framer-motion";
 import "../navbar/Navbar.css";
 
 const MyNavbar = () => {
   //---------STATI-------
   const [showModalTitle, setShowModalTitle] = useState(false);
+
+  //Modale INFO
+  const renderInfo = () => {
+    return <div className="info-tooltip">ciao </div>;
+  };
 
   return (
     <>
@@ -26,9 +34,17 @@ const MyNavbar = () => {
             <Nav className="nav2" href="#home">
               Home
             </Nav>
-            <Nav className="nav2" href="#link">
-              Info
-            </Nav>
+            <Tippy
+              className="info-tooltip"
+              content={renderInfo()}
+              placement="bottom"
+              delay={100}
+              interactive={true}
+              animation="bounce"
+              trigger="click"
+            >
+              <span className="nav2">INFO</span>
+            </Tippy>
             <Nav className="nav2" href="#link">
               Link
             </Nav>

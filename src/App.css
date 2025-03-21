@@ -20,6 +20,10 @@
   font-family: "LogoFont";
   src: url("../src/assets/fonts/WhoDares.otf") format("opentype");
 }
+@font-face {
+  font-family: "FunnyKid";
+  src: url("../src/assets/fonts/FunnyKid.ttf") format("truetype");
+}
 
 /*-----ANIMATION-----*/
 @keyframes moveArrowVertical {

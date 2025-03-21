@@ -26,16 +26,6 @@ const DataComics = [
         foto: pizzamafia,
         descrizione: "pizzamafia è pizzamfia",
       },
-      {
-        nome: "pizzamafia",
-        foto: pizzamafia,
-        descrizione: "pizzamafia è pizzamfia",
-      },
-      {
-        nome: "pizzamafia",
-        foto: pizzamafia,
-        descrizione: "pizzamafia è pizzamfia",
-      },
     ],
   },
   {
