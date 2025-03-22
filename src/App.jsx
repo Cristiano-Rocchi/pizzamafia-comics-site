@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Homepage from "./components/HomePage/HomePage";
 import MyNavbar from "./components/navbar/Navbar";
+import Comics from "./components/Comics/Comics";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <MyNavbar />
         <Routes>
           <Route path="/" element={<Homepage />} />
+          <Route path="/comics/:id" element={<Comics />} />
         </Routes>
       </>
     </BrowserRouter>

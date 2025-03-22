@@ -9,6 +9,7 @@ import pizzamafia from "../assets/img/viaggioIntStellar/character/pizzamafia.png
 
 const DataComics = [
   {
+    id: "viaggio-interstellare",
     titolo: "Viaggio Interstellare",
     cover: coverInterstellar,
     anno: "2021",
@@ -17,6 +18,7 @@ const DataComics = [
       "Viaggio Interstellare è un fumetto che narra la storia di un gruppo di astronauti che partono per un viaggio interstellare alla ricerca di un nuovo pianeta abitabile. Il viaggio, però, non è come se lo aspettavano e dovranno affrontare molte difficoltà.",
     cast: [
       {
+        id: "kun-il-verme",
         nome: "Kun il Verme",
         foto: kunVerme,
         descrizione: "Kun è un verme che vive nel terreno del pianeta Terra",
@@ -29,6 +31,7 @@ const DataComics = [
     ],
   },
   {
+    id: "vecchio-cinese-random",
     titolo: "Vecchio Cinese Random",
     cover: coverVecchioCinese,
     anno: "2019",
@@ -44,6 +47,7 @@ const DataComics = [
     ],
   },
   {
+    id: "people-are-fucked",
     titolo: "People Are Fucked",
     cover: coverPeopleFucked,
     anno: "2017",
@@ -59,6 +63,7 @@ const DataComics = [
     ],
   },
   {
+    id: "odi-et-amo",
     titolo: "Odi Et Amo",
     cover: coverOdiEtAmo,
     anno: "2022",

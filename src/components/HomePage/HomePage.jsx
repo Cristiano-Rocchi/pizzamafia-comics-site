@@ -12,8 +12,11 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
+import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
+  //Hook
+  const naigate = useNavigate();
   //MODALI CAST E STORYLINE
   const renderCastContent = (cast) => {
     return (
@@ -57,13 +60,12 @@ const Homepage = () => {
             navigation={true}
             modules={[Navigation]}
             onInit={(swiper) => {
-              // Manipola il DOM dopo l'inizializzazione dello Swiper
               const nextButton = swiper.navigation.nextEl;
               const prevButton = swiper.navigation.prevEl;
 
               // Rimuovi le icone predefinite
-              nextButton.innerHTML = ">"; // Sostituisci con il testo che vuoi
-              prevButton.innerHTML = "<"; // Sostituisci con il testo che vuoi
+              nextButton.innerHTML = ">";
+              prevButton.innerHTML = "<";
             }}
           >
             {DataComics.map((element, index) => (
@@ -100,7 +102,10 @@ const Homepage = () => {
                   </div>
                 </div>
                 <div className="slide-body">
-                  <Button variant="outline-primary">
+                  <Button
+                    variant="outline-primary"
+                    onClick={() => naigate(`/comics/${element.id}`)}
+                  >
                     <img
                       src={BookIcons}
                       alt="Book Icon"
