@@ -20,6 +20,7 @@
   backdrop-filter: blur(25px);
   border: 1px solid #b80217;
   width: 25%;
+  padding: 5px;
 }
 /*characters*/
 .comics-characters img {
@@ -41,4 +42,22 @@
 /*IMMAGINE FUMETTO*/
 .comics-body img {
   width: 60%;
+}
+
+.comics-extra button {
+  background: none;
+  color: #e0e0e0;
+  font-family: "AnimeFont", sans-serif;
+  border-radius: 3px;
+  border: 2px solid #e0e0e0;
+  transform: rotate(-6deg);
+  letter-spacing: 0.2em;
+  padding-inline: 20px;
+  display: flex;
+  margin-block: 20px;
+}
+.comics-extra button.active {
+  background-color: #cfcfcf;
+  color: black;
+  border-color: black;
 }

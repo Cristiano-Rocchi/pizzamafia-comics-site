@@ -1,12 +1,33 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import DataComics from "../../Data/DataComics";
 import { Container } from "react-bootstrap";
 import "./Comics.css";
 
+//librerie
+import { motion } from "framer-motion";
+
 const Comics = () => {
+  //----STATI----
   const { id } = useParams();
   const comic = DataComics.find((comic) => comic.id === id);
+  const [mode, setMode] = useState("scorrimento");
+
+  const scrollRef = useRef(null);
+
+  //----FUNZIONI----
+  const handleModeChange = (newMode) => {
+    setMode(newMode);
+
+    setTimeout(() => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 100);
+  };
 
   if (!comic) {
     return <h1>Comic not found</h1>;
@@ -14,9 +35,30 @@ const Comics = () => {
   return (
     <>
       <div className="comics-header">
-        <h1>{comic.titolo}</h1>
+        <motion.div
+          initial={{ x: -200, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 200,
+            damping: 15,
+          }}
+        >
+          <h1>{comic.titolo}</h1>
+        </motion.div>
+
         <div className="header-info">
-          <div className="card-info comics-characters">
+          <motion.div
+            className="card-info comics-characters"
+            initial={{ y: -200, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              damping: 15,
+              delay: 1,
+            }}
+          >
             <h3 className="text-center">Personaggi</h3>
             {comic.cast.map((character, index) => (
               <div key={index} className="d-flex">
@@ -27,12 +69,34 @@ const Comics = () => {
                 </div>
               </div>
             ))}
-          </div>
-          <div className="card-info comics-trama">
+          </motion.div>
+
+          <motion.div
+            className="card-info comics-trama"
+            initial={{ y: -200, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              damping: 15,
+              delay: 1.5,
+            }}
+          >
             <h3 className="text-center">Trama</h3>
             <p>{comic.storyline}</p>
-          </div>
-          <div className="card-info comics-info">
+          </motion.div>
+
+          <motion.div
+            className="card-info comics-info"
+            initial={{ y: -200, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              damping: 15,
+              delay: 2,
+            }}
+          >
             <h3 className="text-center">Info</h3>
             <p>
               Anno di uscita: <strong>{comic.anno}</strong>
@@ -43,12 +107,72 @@ const Comics = () => {
             <p>
               Autore <strong>Pizzamafia</strong>
             </p>
-          </div>
+          </motion.div>
+          <motion.div
+            className="card-info comics-extra"
+            initial={{ y: -200, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              damping: 15,
+              delay: 2.5,
+            }}
+          >
+            <h3 className="text-center">Extra</h3>
+            <button
+              className={mode === "classic" ? "active" : ""}
+              onClick={() => handleModeChange("classic")}
+            >
+              Leggi in modalità classica
+            </button>
+            <button
+              className={mode === "scorrimento" ? "active" : ""}
+              onClick={() => handleModeChange("scorrimento")}
+            >
+              Leggi in modalità scorrimento
+            </button>
+          </motion.div>
         </div>
       </div>
-      <Container className="comics-body">
-        <img src={comic.completo} alt="fumetto" />
-      </Container>
+
+      <div ref={scrollRef}>
+        {" "}
+        {/* SCORRIMENTO MODE */}
+        {mode === "scorrimento" && (
+          <motion.div
+            initial={{ x: -200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              damping: 15,
+              delay: 0.5,
+            }}
+          >
+            <Container className="container comics-body">
+              <img src={comic.completo} alt="fumetto" />
+            </Container>
+          </motion.div>
+        )}
+        {/* CLASSIC MODE */}
+        {mode === "classic" && (
+          <motion.div
+            initial={{ x: 200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: 200, opacity: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              damping: 15,
+            }}
+          >
+            <Container className="container comics-classic-body">
+              <h1>Ciao</h1>
+            </Container>
+          </motion.div>
+        )}
+      </div>
     </>
   );
 };
