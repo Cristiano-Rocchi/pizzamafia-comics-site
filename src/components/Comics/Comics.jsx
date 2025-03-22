@@ -5,6 +5,10 @@ import { Container } from "react-bootstrap";
 import "./Comics.css";
 
 //librerie
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Navigation } from "swiper/modules";
+import "swiper/css/navigation";
 import { motion } from "framer-motion";
 
 const Comics = () => {
@@ -151,7 +155,7 @@ const Comics = () => {
             }}
           >
             <Container className="container comics-body">
-              <img src={comic.completo} alt="fumetto" />
+              <img src={comic.scrollMode} alt="fumetto" />
             </Container>
           </motion.div>
         )}
@@ -168,7 +172,20 @@ const Comics = () => {
             }}
           >
             <Container className="container comics-classic-body">
-              <h1>Ciao</h1>
+              <Swiper
+                className="mySwiper"
+                rewind={true}
+                navigation={true}
+                modules={[Navigation]}
+                onInit={(swiper) => {
+                  const nextButton = swiper.navigation.nextEl;
+                  const prevButton = swiper.navigation.prevEl;
+
+                  // Rimuovi le icone predefinite
+                  nextButton.innerHTML = ">";
+                  prevButton.innerHTML = "<";
+                }}
+              ></Swiper>
             </Container>
           </motion.div>
         )}

@@ -11,6 +11,22 @@ import pizzamafia from "../assets/img/viaggioIntStellar/character/pizzamafia.png
 //comics
 import odietamo from "../assets/img/odiEtAmo/odi.et.amo.siteversion2.png";
 
+//CLASSICMODE
+//odietamo
+import odietamo0 from "../assets/img/odiEtAmo/classic/0INTRO.tif";
+import odietamo1 from "../assets/img/odiEtAmo/classic/1.tif";
+import odietamo2 from "../assets/img/odiEtAmo/classic/2.tif";
+import odietamo3 from "../assets/img/odiEtAmo/classic/3.tif";
+import odietamo4 from "../assets/img/odiEtAmo/classic/4.tif";
+import odietamo5 from "../assets/img/odiEtAmo/classic/5.tif";
+import odietamo6 from "../assets/img/odiEtAmo/classic/6.tif";
+import odietamo7 from "../assets/img/odiEtAmo/classic/7.tif";
+import odietamo8 from "../assets/img/odiEtAmo/classic/8.tif";
+import odietamo9 from "../assets/img/odiEtAmo/classic/9.tif";
+import odietamo10 from "../assets/img/odiEtAmo/classic/10.tif";
+import odietamo11 from "../assets/img/odiEtAmo/classic/11.tif";
+import odietamo12 from "../assets/img/odiEtAmo/classic/13.tif";
+
 const DataComics = [
   {
     id: "viaggio-interstellare",
@@ -18,12 +34,11 @@ const DataComics = [
     cover: coverInterstellar,
     anno: "2021",
     produzione: "Digitale",
-    completo: odietamo,
+    scrollMode: odietamo,
     storyline:
       "Viaggio Interstellare è un fumetto che narra la storia di un gruppo di astronauti che partono per un viaggio interstellare alla ricerca di un nuovo pianeta abitabile. Il viaggio, però, non è come se lo aspettavano e dovranno affrontare molte difficoltà.",
     cast: [
       {
-        id: "kun-il-verme",
         nome: "Kun il Verme",
         foto: kunVerme,
         descrizione: "Kun è un verme che vive nel terreno del pianeta Terra",
@@ -34,6 +49,60 @@ const DataComics = [
         descrizione: "pizzamafia è pizzamfia",
       },
     ],
+    classicMode: [
+      {
+        pagina: "cover",
+        img: odietamo0,
+      },
+      {
+        pagina: 1,
+        img: odietamo1,
+      },
+      {
+        pagina: 2,
+        img: odietamo2,
+      },
+      {
+        pagina: 3,
+        img: odietamo3,
+      },
+      {
+        pagina: 4,
+        img: odietamo4,
+      },
+      {
+        pagina: 5,
+        img: odietamo5,
+      },
+      {
+        pagina: 6,
+        img: odietamo6,
+      },
+      {
+        pagina: 7,
+        img: odietamo7,
+      },
+      {
+        pagina: 8,
+        img: odietamo8,
+      },
+      {
+        pagina: 9,
+        img: odietamo9,
+      },
+      {
+        pagina: 10,
+        img: odietamo10,
+      },
+      {
+        pagina: 11,
+        img: odietamo11,
+      },
+      {
+        pagina: 12,
+        img: odietamo12,
+      },
+    ],
   },
   {
     id: "vecchio-cinese-random",
@@ -41,7 +110,7 @@ const DataComics = [
     cover: coverVecchioCinese,
     anno: "2019",
     produzione: "Digitale",
-    completo: odietamo,
+    scrollMode: odietamo,
     storyline:
       "Vecchio Cinese Random è un fumetto che narra la storia di un vecchio cinese che, dopo aver perso tutto, decide di iniziare una nuova vita in un paese straniero. Il fumetto racconta le sue avventure e le sue disavventure in un mondo che non conosce.",
     cast: [
@@ -49,6 +118,60 @@ const DataComics = [
         nome: "Kun il Verme",
         foto: "bo",
         descrizione: "Kun è un verme che vive nel terreno del pianeta Terra",
+      },
+    ],
+    classicMode: [
+      {
+        pagina: "cover",
+        img: odietamo0,
+      },
+      {
+        pagina: 1,
+        img: odietamo1,
+      },
+      {
+        pagina: 2,
+        img: odietamo2,
+      },
+      {
+        pagina: 3,
+        img: odietamo3,
+      },
+      {
+        pagina: 4,
+        img: odietamo4,
+      },
+      {
+        pagina: 5,
+        img: odietamo5,
+      },
+      {
+        pagina: 6,
+        img: odietamo6,
+      },
+      {
+        pagina: 7,
+        img: odietamo7,
+      },
+      {
+        pagina: 8,
+        img: odietamo8,
+      },
+      {
+        pagina: 9,
+        img: odietamo9,
+      },
+      {
+        pagina: 10,
+        img: odietamo10,
+      },
+      {
+        pagina: 11,
+        img: odietamo11,
+      },
+      {
+        pagina: 12,
+        img: odietamo12,
       },
     ],
   },
@@ -58,7 +181,7 @@ const DataComics = [
     cover: coverPeopleFucked,
     anno: "2017",
     produzione: "Digitale",
-    completo: odietamo,
+    scrollMode: odietamo,
     storyline:
       "Vecchio Cinese Random è un fumetto che narra la storia di un vecchio cinese che, dopo aver perso tutto, decide di iniziare una nuova vita in un paese straniero. Il fumetto racconta le sue avventure e le sue disavventure in un mondo che non conosce.",
     cast: [
@@ -68,6 +191,60 @@ const DataComics = [
         descrizione: "Kun è un verme che vive nel terreno del pianeta Terra",
       },
     ],
+    classicMode: [
+      {
+        pagina: "cover",
+        img: odietamo0,
+      },
+      {
+        pagina: 1,
+        img: odietamo1,
+      },
+      {
+        pagina: 2,
+        img: odietamo2,
+      },
+      {
+        pagina: 3,
+        img: odietamo3,
+      },
+      {
+        pagina: 4,
+        img: odietamo4,
+      },
+      {
+        pagina: 5,
+        img: odietamo5,
+      },
+      {
+        pagina: 6,
+        img: odietamo6,
+      },
+      {
+        pagina: 7,
+        img: odietamo7,
+      },
+      {
+        pagina: 8,
+        img: odietamo8,
+      },
+      {
+        pagina: 9,
+        img: odietamo9,
+      },
+      {
+        pagina: 10,
+        img: odietamo10,
+      },
+      {
+        pagina: 11,
+        img: odietamo11,
+      },
+      {
+        pagina: 12,
+        img: odietamo12,
+      },
+    ],
   },
   {
     id: "odi-et-amo",
@@ -75,7 +252,7 @@ const DataComics = [
     cover: coverOdiEtAmo,
     anno: "2022",
     produzione: "Digitale",
-    completo: odietamo,
+    scrollMode: odietamo,
     storyline:
       "Vecchio Cinese Random è un fumetto che narra la storia di un vecchio cinese che, dopo aver perso tutto, decide di iniziare una nuova vita in un paese straniero. Il fumetto racconta le sue avventure e le sue disavventure in un mondo che non conosce.",
     cast: [
@@ -83,6 +260,60 @@ const DataComics = [
         nome: "Kun il Verme",
         foto: "bo",
         descrizione: "Kun è un verme che vive nel terreno del pianeta Terra",
+      },
+    ],
+    classicMode: [
+      {
+        pagina: "cover",
+        img: odietamo0,
+      },
+      {
+        pagina: 1,
+        img: odietamo1,
+      },
+      {
+        pagina: 2,
+        img: odietamo2,
+      },
+      {
+        pagina: 3,
+        img: odietamo3,
+      },
+      {
+        pagina: 4,
+        img: odietamo4,
+      },
+      {
+        pagina: 5,
+        img: odietamo5,
+      },
+      {
+        pagina: 6,
+        img: odietamo6,
+      },
+      {
+        pagina: 7,
+        img: odietamo7,
+      },
+      {
+        pagina: 8,
+        img: odietamo8,
+      },
+      {
+        pagina: 9,
+        img: odietamo9,
+      },
+      {
+        pagina: 10,
+        img: odietamo10,
+      },
+      {
+        pagina: 11,
+        img: odietamo11,
+      },
+      {
+        pagina: 12,
+        img: odietamo12,
       },
     ],
   },

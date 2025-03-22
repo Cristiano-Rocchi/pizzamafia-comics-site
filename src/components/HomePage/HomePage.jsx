@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import "./HomePage.css";
 import BookIcons from "../../assets/icons/book.png";
 import DataComics from "../../Data/DataComics";
-
+import { useNavigate } from "react-router-dom";
 //librerie
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -12,7 +12,6 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
-import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
   //Hook
