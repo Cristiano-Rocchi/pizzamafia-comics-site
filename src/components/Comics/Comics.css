@@ -1,0 +1,44 @@
+.comics-header {
+  color: #e0e0e0;
+  font-family: "AnimeFont", sans-serif;
+}
+.comics-header h1 {
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.comics-header .header-info {
+  display: flex;
+  gap: 30px;
+}
+
+/*stili card info*/
+.card-info {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(25px);
+  border: 1px solid #b80217;
+  width: 25%;
+}
+/*characters*/
+.comics-characters img {
+  width: 70px;
+  height: 80px;
+}
+/*----BODY------*/
+.comics-body {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(25px);
+  border: 1px solid #b80217;
+  margin-top: 2em;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px !important;
+}
+
+/*IMMAGINE FUMETTO*/
+.comics-body img {
+  width: 60%;
+}

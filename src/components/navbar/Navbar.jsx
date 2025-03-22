@@ -46,7 +46,7 @@ const MyNavbar = () => {
               <span className="nav2">INFO</span>
             </Tippy>
             <Nav className="nav2" href="#link">
-              Link
+              Comics
             </Nav>
             <Nav className="nav2" href="#link">
               Download

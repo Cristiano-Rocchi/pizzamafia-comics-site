@@ -1,3 +1,4 @@
+//covwers
 import coverInterstellar from "../assets/img/viaggioIntStellar/cover.jpg";
 import coverVecchioCinese from "../assets/img/vecchioCinese/FINITO4.jpg";
 import coverPeopleFucked from "../assets/img/peopleFucked/Image053.png";
@@ -7,6 +8,9 @@ import coverOdiEtAmo from "../assets/img/odiEtAmo/cover.jpg";
 import kunVerme from "../assets/img/viaggioIntStellar/character/kunVerme.png";
 import pizzamafia from "../assets/img/viaggioIntStellar/character/pizzamafia.png";
 
+//comics
+import odietamo from "../assets/img/odiEtAmo/odi.et.amo.siteversion2.png";
+
 const DataComics = [
   {
     id: "viaggio-interstellare",
@@ -14,6 +18,7 @@ const DataComics = [
     cover: coverInterstellar,
     anno: "2021",
     produzione: "Digitale",
+    completo: odietamo,
     storyline:
       "Viaggio Interstellare è un fumetto che narra la storia di un gruppo di astronauti che partono per un viaggio interstellare alla ricerca di un nuovo pianeta abitabile. Il viaggio, però, non è come se lo aspettavano e dovranno affrontare molte difficoltà.",
     cast: [
@@ -36,6 +41,7 @@ const DataComics = [
     cover: coverVecchioCinese,
     anno: "2019",
     produzione: "Digitale",
+    completo: odietamo,
     storyline:
       "Vecchio Cinese Random è un fumetto che narra la storia di un vecchio cinese che, dopo aver perso tutto, decide di iniziare una nuova vita in un paese straniero. Il fumetto racconta le sue avventure e le sue disavventure in un mondo che non conosce.",
     cast: [
@@ -52,6 +58,7 @@ const DataComics = [
     cover: coverPeopleFucked,
     anno: "2017",
     produzione: "Digitale",
+    completo: odietamo,
     storyline:
       "Vecchio Cinese Random è un fumetto che narra la storia di un vecchio cinese che, dopo aver perso tutto, decide di iniziare una nuova vita in un paese straniero. Il fumetto racconta le sue avventure e le sue disavventure in un mondo che non conosce.",
     cast: [
@@ -68,6 +75,7 @@ const DataComics = [
     cover: coverOdiEtAmo,
     anno: "2022",
     produzione: "Digitale",
+    completo: odietamo,
     storyline:
       "Vecchio Cinese Random è un fumetto che narra la storia di un vecchio cinese che, dopo aver perso tutto, decide di iniziare una nuova vita in un paese straniero. Il fumetto racconta le sue avventure e le sue disavventure in un mondo che non conosce.",
     cast: [
