@@ -10,10 +10,11 @@ import pizzamafia from "../assets/img/viaggioIntStellar/character/pizzamafia.png
 
 //comics
 import odietamo from "../assets/img/odiEtAmo/odi.et.amo.siteversion2.png";
+import peopleFuckedScroll from "../assets/img/peopleFucked/scorrimento.png";
+import viaggioIntStellar from "../assets/img/viaggioIntStellar/completa.png";
 
 //CLASSICMODE
 //odietamo
-
 import odietamo0 from "../assets/img/odiEtAmo/classic/0INTRO.png";
 import odietamo1 from "../assets/img/odiEtAmo/classic/1.png";
 import odietamo2 from "../assets/img/odiEtAmo/classic/2.png";
@@ -28,6 +29,33 @@ import odietamo10 from "../assets/img/odiEtAmo/classic/10.png";
 import odietamo11 from "../assets/img/odiEtAmo/classic/11.png";
 import odietamo12 from "../assets/img/odiEtAmo/classic/12.png";
 
+//peopleFucked
+import peopleFucked0 from "../assets/img/peopleFucked/classic/0COVER.png";
+import peopleFucked1 from "../assets/img/peopleFucked/classic/1.png";
+import peopleFucked2 from "../assets/img/peopleFucked/classic/2.png";
+import peopleFucked3 from "../assets/img/peopleFucked/classic/3.png";
+import peopleFucked4 from "../assets/img/peopleFucked/classic/4.png";
+import peopleFucked5 from "../assets/img/peopleFucked/classic/5.png";
+import peopleFucked6 from "../assets/img/peopleFucked/classic/6.png";
+import peopleFucked7 from "../assets/img/peopleFucked/classic/7.png";
+import peopleFucked8 from "../assets/img/peopleFucked/classic/8.png";
+import peopleFucked9 from "../assets/img/peopleFucked/classic/9.png";
+
+//viaggioInterstellare
+import viaggio1 from "../assets/img/viaggioIntStellar/classic/1.jpg";
+import viaggio2 from "../assets/img/viaggioIntStellar/classic/2.jpg";
+import viaggio3 from "../assets/img/viaggioIntStellar/classic/3.jpg";
+import viaggio4 from "../assets/img/viaggioIntStellar/classic/4.jpg";
+import viaggio5 from "../assets/img/viaggioIntStellar/classic/5.jpg";
+import viaggio6 from "../assets/img/viaggioIntStellar/classic/6.jpg";
+import viaggio7 from "../assets/img/viaggioIntStellar/classic/7.jpg";
+import viaggio8 from "../assets/img/viaggioIntStellar/classic/8.jpg";
+import viaggio9 from "../assets/img/viaggioIntStellar/classic/9.jpg";
+import viaggio10 from "../assets/img/viaggioIntStellar/classic/10.jpg";
+import viaggio11 from "../assets/img/viaggioIntStellar/classic/11.jpg";
+import viaggio12 from "../assets/img/viaggioIntStellar/classic/12.jpg";
+import viaggio13 from "../assets/img/viaggioIntStellar/classic/13.jpg";
+
 const DataComics = [
   {
     id: "viaggio-interstellare",
@@ -35,7 +63,7 @@ const DataComics = [
     cover: coverInterstellar,
     anno: "2021",
     produzione: "Digitale",
-    scrollMode: odietamo,
+    scrollMode: viaggioIntStellar,
     storyline:
       "Viaggio Interstellare è un fumetto che narra la storia di un gruppo di astronauti che partono per un viaggio interstellare alla ricerca di un nuovo pianeta abitabile. Il viaggio, però, non è come se lo aspettavano e dovranno affrontare molte difficoltà.",
     cast: [
@@ -52,56 +80,56 @@ const DataComics = [
     ],
     classicMode: [
       {
-        pagina: "cover",
-        img: odietamo0,
-      },
-      {
         pagina: 1,
-        img: odietamo1,
+        img: viaggio1,
       },
       {
         pagina: 2,
-        img: odietamo2,
+        img: viaggio2,
       },
       {
         pagina: 3,
-        img: odietamo3,
+        img: viaggio3,
       },
       {
         pagina: 4,
-        img: odietamo4,
+        img: viaggio4,
       },
       {
         pagina: 5,
-        img: odietamo5,
+        img: viaggio5,
       },
       {
         pagina: 6,
-        img: odietamo6,
+        img: viaggio6,
       },
       {
         pagina: 7,
-        img: odietamo7,
+        img: viaggio7,
       },
       {
         pagina: 8,
-        img: odietamo8,
+        img: viaggio8,
       },
       {
         pagina: 9,
-        img: odietamo9,
+        img: viaggio9,
       },
       {
         pagina: 10,
-        img: odietamo10,
+        img: viaggio10,
       },
       {
         pagina: 11,
-        img: odietamo11,
+        img: viaggio11,
       },
       {
         pagina: 12,
-        img: odietamo12,
+        img: viaggio12,
+      },
+      {
+        pagina: 13,
+        img: viaggio13,
       },
     ],
   },
@@ -182,7 +210,7 @@ const DataComics = [
     cover: coverPeopleFucked,
     anno: "2017",
     produzione: "Digitale",
-    scrollMode: odietamo,
+    scrollMode: peopleFuckedScroll,
     storyline:
       "Vecchio Cinese Random è un fumetto che narra la storia di un vecchio cinese che, dopo aver perso tutto, decide di iniziare una nuova vita in un paese straniero. Il fumetto racconta le sue avventure e le sue disavventure in un mondo che non conosce.",
     cast: [
@@ -195,55 +223,43 @@ const DataComics = [
     classicMode: [
       {
         pagina: "cover",
-        img: odietamo0,
+        img: peopleFucked0,
       },
       {
         pagina: 1,
-        img: odietamo1,
+        img: peopleFucked1,
       },
       {
         pagina: 2,
-        img: odietamo2,
+        img: peopleFucked2,
       },
       {
         pagina: 3,
-        img: odietamo3,
+        img: peopleFucked3,
       },
       {
         pagina: 4,
-        img: odietamo4,
+        img: peopleFucked4,
       },
       {
         pagina: 5,
-        img: odietamo5,
+        img: peopleFucked5,
       },
       {
         pagina: 6,
-        img: odietamo6,
+        img: peopleFucked6,
       },
       {
         pagina: 7,
-        img: odietamo7,
+        img: peopleFucked7,
       },
       {
         pagina: 8,
-        img: odietamo8,
+        img: peopleFucked8,
       },
       {
         pagina: 9,
-        img: odietamo9,
-      },
-      {
-        pagina: 10,
-        img: odietamo10,
-      },
-      {
-        pagina: 11,
-        img: odietamo11,
-      },
-      {
-        pagina: 12,
-        img: odietamo11,
+        img: peopleFucked9,
       },
     ],
   },
@@ -314,7 +330,7 @@ const DataComics = [
       },
       {
         pagina: 12,
-        img: odietamo11,
+        img: odietamo12,
       },
     ],
   },
