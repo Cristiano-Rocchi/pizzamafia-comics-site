@@ -27,22 +27,6 @@
   width: 70px;
   height: 80px;
 }
-/*----BODY------*/
-.comics-body {
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(25px);
-  border: 1px solid #b80217;
-  margin-top: 2em;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  padding-top: 30px !important;
-}
-
-/*IMMAGINE FUMETTO*/
-.comics-body img {
-  width: 60%;
-}
 
 .comics-extra button {
   background: none;
@@ -61,19 +45,41 @@
   color: black;
   border-color: black;
 }
-
-.comic-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  max-height: 90vh; /* Limita l'altezza massima */
+/*----SCORRIMENTO MODE------*/
+.comics-body {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(25px);
+  border: 1px solid #b80217;
+  margin-top: 2em;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px !important;
+  color: #e0e0e0;
+  font-family: "AnimeFont", sans-serif;
+  font-size: 1.1em;
 }
+
+/*IMMAGINE FUMETTO*/
+.comics-body .fumetto {
+  width: 60%;
+}
+.comics-body .text-end img {
+  width: 26px;
+  transform: rotate(90deg);
+}
+.comics-body .text-end {
+  margin-right: 20px;
+  padding-top: 10px;
+}
+
+/*CLASSIC MODE*/
 
 .slide-classic {
   display: flex;
   justify-content: center;
   align-items: center;
-  aspect-ratio: 16 / 9; /* Mantiene proporzioni */
+  aspect-ratio: 16 / 9;
 }
 
 .comics-classic-body {
@@ -84,7 +90,7 @@
   border-radius: 5px;
   display: flex;
   justify-content: center;
-  padding-top: 30px !important;
+  padding-top: 20px !important;
   color: #e0e0e0;
   font-family: "AnimeFont", sans-serif;
 }
@@ -96,4 +102,22 @@
 }
 .comics-classic-body .header-classic:hover {
   cursor: pointer;
+}
+
+.comic-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-height: 90vh;
+}
+
+.fullscreen-container-scroll {
+  height: 100vh;
+  overflow-y: auto;
+  border-bottom: black;
+}
+
+.up-icon {
+  width: 24px;
+  transform: rotate(90deg);
 }

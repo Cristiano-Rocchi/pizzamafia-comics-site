@@ -6,6 +6,7 @@ import "./Comics.css";
 //icons
 import exitfs from "../../assets/icons/exitfullscreen.svg";
 import fullscreen from "../../assets/icons/fullscreen.svg";
+import up from "../../assets/icons/graffitiarrowsvg.svg";
 
 //librerie
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -173,8 +174,44 @@ const Comics = () => {
               delay: 0.5,
             }}
           >
-            <Container className="comics-body">
-              <img src={comic.scrollMode} alt="fumetto" />
+            <Container
+              className={`comics-body d-block ${
+                isFullscreen ? "fullscreen-container-scroll" : ""
+              }`}
+              ref={swiperRef}
+            >
+              <div className="header-scorrimento d-flex justify-content-between sticky-top">
+                <div className="d-flex ms-3 pt-2" onClick={toggleFullscreen}>
+                  <img
+                    src={isFullscreen ? exitfs : fullscreen}
+                    alt={isFullscreen ? "Esci da fullscreen" : "Fullscreen"}
+                    className="fullscreen-icon"
+                  />
+                  {isFullscreen ? " Esci da fullscreen" : " Fullscreen"}
+                </div>
+                <div
+                  className="d-flex me-3 pt-2"
+                  onClick={() => {
+                    if (isFullscreen && swiperRef.current) {
+                      // Scroll modalità fullscreen
+                      swiperRef.current.scrollTo({
+                        top: 0,
+                        behavior: "smooth",
+                      });
+                    } else {
+                      // Scroll modalità normale
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }
+                  }}
+                >
+                  <img className="up-icon" src={up} alt="" />
+                  torna all'inizio
+                </div>
+              </div>
+
+              <div className="text-center">
+                <img className="fumetto" src={comic.scrollMode} alt="fumetto" />
+              </div>
             </Container>
           </motion.div>
         )}
