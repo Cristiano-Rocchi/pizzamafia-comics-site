@@ -3,23 +3,32 @@ import { useParams } from "react-router-dom";
 import DataComics from "../../Data/DataComics";
 import { Container } from "react-bootstrap";
 import "./Comics.css";
+//icons
+import exitfs from "../../assets/icons/exitfullscreen.svg";
+import fullscreen from "../../assets/icons/fullscreen.svg";
 
 //librerie
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
+import { EffectCreative } from "swiper/modules";
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
+import "swiper/css/effect-creative";
 
 const Comics = () => {
   //----STATI----
   const { id } = useParams();
   const comic = DataComics.find((comic) => comic.id === id);
   const [mode, setMode] = useState("scorrimento");
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
+  //----REF----
   const scrollRef = useRef(null);
+  const swiperRef = useRef(null);
 
   //----FUNZIONI----
+  //change mode
   const handleModeChange = (newMode) => {
     setMode(newMode);
 
@@ -31,6 +40,16 @@ const Comics = () => {
         });
       }
     }, 100);
+  };
+  //fullscreen
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      swiperRef.current?.requestFullscreen();
+      setIsFullscreen(true);
+    } else {
+      document.exitFullscreen();
+      setIsFullscreen(false);
+    }
   };
 
   if (!comic) {
@@ -171,12 +190,30 @@ const Comics = () => {
               damping: 15,
             }}
           >
-            <Container className="comics-classic-body">
+            <Container className="comics-classic-body d-block" ref={swiperRef}>
+              <div className="header-classic" onClick={toggleFullscreen}>
+                <img
+                  src={isFullscreen ? exitfs : fullscreen}
+                  alt={isFullscreen ? "Esci da fullscreen" : "Fullscreen"}
+                  className="fullscreen-icon"
+                />
+                {isFullscreen ? " Esci da fullscreen" : " Fullscreen"}
+              </div>
               <Swiper
                 className="swiper-comics-classic"
                 rewind={true}
                 navigation={true}
-                modules={[Navigation]}
+                modules={[Navigation, EffectCreative]}
+                effect={"creative"}
+                creativeEffect={{
+                  prev: {
+                    shadow: true,
+                    translate: [0, 0, -5000],
+                  },
+                  next: {
+                    translate: ["100%", 0, 0],
+                  },
+                }}
               >
                 {comic.classicMode.map((foto, index) => (
                   <SwiperSlide className="slide-classic" key={index}>

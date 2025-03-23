@@ -69,9 +69,6 @@
   max-height: 90vh; /* Limita l'altezza massima */
 }
 
-.swiper-comics-classic {
-}
-
 .slide-classic {
   display: flex;
   justify-content: center;
@@ -88,4 +85,15 @@
   display: flex;
   justify-content: center;
   padding-top: 30px !important;
+  color: #e0e0e0;
+  font-family: "AnimeFont", sans-serif;
+}
+
+.comics-classic-body .header-classic {
+  font-size: 1.2em;
+  text-align: end;
+  margin-right: 20px;
+}
+.comics-classic-body .header-classic:hover {
+  cursor: pointer;
 }
