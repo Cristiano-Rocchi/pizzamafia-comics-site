@@ -13,19 +13,20 @@ import odietamo from "../assets/img/odiEtAmo/odi.et.amo.siteversion2.png";
 
 //CLASSICMODE
 //odietamo
-import odietamo0 from "../assets/img/odiEtAmo/classic/0INTRO.tif";
-import odietamo1 from "../assets/img/odiEtAmo/classic/1.tif";
-import odietamo2 from "../assets/img/odiEtAmo/classic/2.tif";
-import odietamo3 from "../assets/img/odiEtAmo/classic/3.tif";
-import odietamo4 from "../assets/img/odiEtAmo/classic/4.tif";
-import odietamo5 from "../assets/img/odiEtAmo/classic/5.tif";
-import odietamo6 from "../assets/img/odiEtAmo/classic/6.tif";
-import odietamo7 from "../assets/img/odiEtAmo/classic/7.tif";
-import odietamo8 from "../assets/img/odiEtAmo/classic/8.tif";
-import odietamo9 from "../assets/img/odiEtAmo/classic/9.tif";
-import odietamo10 from "../assets/img/odiEtAmo/classic/10.tif";
-import odietamo11 from "../assets/img/odiEtAmo/classic/11.tif";
-import odietamo12 from "../assets/img/odiEtAmo/classic/13.tif";
+
+import odietamo0 from "../assets/img/odiEtAmo/classic/0INTRO.png";
+import odietamo1 from "../assets/img/odiEtAmo/classic/1.png";
+import odietamo2 from "../assets/img/odiEtAmo/classic/2.png";
+import odietamo3 from "../assets/img/odiEtAmo/classic/3.png";
+import odietamo4 from "../assets/img/odiEtAmo/classic/4.png";
+import odietamo5 from "../assets/img/odiEtAmo/classic/5.png";
+import odietamo6 from "../assets/img/odiEtAmo/classic/6.png";
+import odietamo7 from "../assets/img/odiEtAmo/classic/7.png";
+import odietamo8 from "../assets/img/odiEtAmo/classic/8.png";
+import odietamo9 from "../assets/img/odiEtAmo/classic/9.png";
+import odietamo10 from "../assets/img/odiEtAmo/classic/10.png";
+import odietamo11 from "../assets/img/odiEtAmo/classic/11.png";
+import odietamo12 from "../assets/img/odiEtAmo/classic/12.png";
 
 const DataComics = [
   {
@@ -171,7 +172,7 @@ const DataComics = [
       },
       {
         pagina: 12,
-        img: odietamo12,
+        img: odietamo11,
       },
     ],
   },
@@ -242,7 +243,7 @@ const DataComics = [
       },
       {
         pagina: 12,
-        img: odietamo12,
+        img: odietamo11,
       },
     ],
   },
@@ -313,7 +314,7 @@ const DataComics = [
       },
       {
         pagina: 12,
-        img: odietamo12,
+        img: odietamo11,
       },
     ],
   },

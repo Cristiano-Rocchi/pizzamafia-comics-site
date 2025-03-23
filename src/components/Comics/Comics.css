@@ -61,3 +61,31 @@
   color: black;
   border-color: black;
 }
+
+.comic-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-height: 90vh; /* Limita l'altezza massima */
+}
+
+.swiper-comics-classic {
+}
+
+.slide-classic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 16 / 9; /* Mantiene proporzioni */
+}
+
+.comics-classic-body {
+  background: black;
+  backdrop-filter: blur(25px);
+  border: 2px solid #b80217;
+  margin-top: 2em;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px !important;
+}

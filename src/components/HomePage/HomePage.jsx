@@ -54,7 +54,7 @@ const Homepage = () => {
           }}
         >
           <Swiper
-            className="mySwiper"
+            className="swiper-home"
             rewind={true}
             navigation={true}
             modules={[Navigation]}

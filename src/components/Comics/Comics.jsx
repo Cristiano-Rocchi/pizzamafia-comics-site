@@ -154,7 +154,7 @@ const Comics = () => {
               delay: 0.5,
             }}
           >
-            <Container className="container comics-body">
+            <Container className="comics-body">
               <img src={comic.scrollMode} alt="fumetto" />
             </Container>
           </motion.div>
@@ -171,21 +171,23 @@ const Comics = () => {
               damping: 15,
             }}
           >
-            <Container className="container comics-classic-body">
+            <Container className="comics-classic-body">
               <Swiper
-                className="mySwiper"
+                className="swiper-comics-classic"
                 rewind={true}
                 navigation={true}
                 modules={[Navigation]}
-                onInit={(swiper) => {
-                  const nextButton = swiper.navigation.nextEl;
-                  const prevButton = swiper.navigation.prevEl;
-
-                  // Rimuovi le icone predefinite
-                  nextButton.innerHTML = ">";
-                  prevButton.innerHTML = "<";
-                }}
-              ></Swiper>
+              >
+                {comic.classicMode.map((foto, index) => (
+                  <SwiperSlide className="slide-classic" key={index}>
+                    <img
+                      src={foto.img}
+                      alt={`comic-${index}`}
+                      className="comic-image"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </Container>
           </motion.div>
         )}
