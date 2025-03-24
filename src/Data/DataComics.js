@@ -11,6 +11,17 @@ import pizzamafia from "../assets/img/viaggioIntStellar/character/pizzamafia.png
 import microfono1 from "../assets/img/viaggioIntStellar/character/mic1.png";
 import microfono2 from "../assets/img/viaggioIntStellar/character/mic2.png";
 
+//odietamo
+import pizzamafiaVerde from "../assets/img/odiEtAmo/characters/pizzamafiaVerde.png";
+import leboya from "../assets/img/odiEtAmo/characters/leboya.png";
+
+//peopleFucked
+import pizzamafiaBianco from "../assets/img/peopleFucked/characters/pzza.png";
+import cartelloPeople from "../assets/img/peopleFucked/characters/cartello.png";
+//vecchioCinese
+import vecchioChina from "../assets/img/vecchioCinese/characters/vecchioCinese.png";
+import plotTwist from "../assets/img/vecchioCinese/characters/plotTwist.png";
+
 //cCOVER
 import odietamo from "../assets/img/odiEtAmo/odi.et.amo.siteversion2.png";
 import peopleFuckedScroll from "../assets/img/peopleFucked/scorrimento.png";
@@ -166,8 +177,13 @@ const DataComics = [
       "Vecchio Cinese Random è un fumetto che narra la storia di un vecchio cinese che, dopo aver perso tutto, decide di iniziare una nuova vita in un paese straniero. Il fumetto racconta le sue avventure e le sue disavventure in un mondo che non conosce.",
     cast: [
       {
-        nome: "Kun il Verme",
-        foto: "bo",
+        nome: "Vecchio Cinese",
+        foto: vecchioChina,
+        descrizione: "Kun è un verme che vive nel terreno del pianeta Terra",
+      },
+      {
+        nome: "Plot Twist",
+        foto: plotTwist,
         descrizione: "Kun è un verme che vive nel terreno del pianeta Terra",
       },
     ],
@@ -209,8 +225,13 @@ const DataComics = [
       "Vecchio Cinese Random è un fumetto che narra la storia di un vecchio cinese che, dopo aver perso tutto, decide di iniziare una nuova vita in un paese straniero. Il fumetto racconta le sue avventure e le sue disavventure in un mondo che non conosce.",
     cast: [
       {
-        nome: "Kun il Verme",
-        foto: "bo",
+        nome: "Pizzamafia Bianco",
+        foto: pizzamafiaBianco,
+        descrizione: "Kun è un verme che vive nel terreno del pianeta Terra",
+      },
+      {
+        nome: "Cartello",
+        foto: cartelloPeople,
         descrizione: "Kun è un verme che vive nel terreno del pianeta Terra",
       },
     ],
@@ -268,9 +289,14 @@ const DataComics = [
       "Vecchio Cinese Random è un fumetto che narra la storia di un vecchio cinese che, dopo aver perso tutto, decide di iniziare una nuova vita in un paese straniero. Il fumetto racconta le sue avventure e le sue disavventure in un mondo che non conosce.",
     cast: [
       {
-        nome: "Kun il Verme",
-        foto: "bo",
+        nome: "Pizzamafia Verde",
+        foto: pizzamafiaVerde,
         descrizione: "Kun è un verme che vive nel terreno del pianeta Terra",
+      },
+      {
+        nome: "Leboya",
+        foto: leboya,
+        descrizione: "in onore di Zerocalcare arriva Leboya.",
       },
     ],
     classicMode: [
