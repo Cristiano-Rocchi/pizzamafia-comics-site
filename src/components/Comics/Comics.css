@@ -16,13 +16,17 @@
 
 /*stili card info*/
 .card-info {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(12, 12, 12, 0.8);
   backdrop-filter: blur(25px);
   border: 1px solid #b80217;
   width: 25%;
   padding: 5px;
 }
 /*characters*/
+.comics-characters {
+  max-height: 300px;
+  overflow-y: auto;
+}
 .comics-characters img {
   width: 70px;
   height: 80px;
@@ -47,7 +51,7 @@
 }
 /*----SCORRIMENTO MODE------*/
 .comics-body {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(12, 12, 12, 0.8);
   backdrop-filter: blur(25px);
   border: 1px solid #b80217;
   margin-top: 2em;
@@ -83,7 +87,7 @@
 }
 
 .comics-classic-body {
-  background: black;
+  background: rgb(12, 12, 12, 0.8);
   backdrop-filter: blur(25px);
   border: 2px solid #b80217;
   margin-top: 2em;
@@ -109,6 +113,15 @@
   height: 100%;
   object-fit: contain;
   max-height: 90vh;
+}
+.swiper-comics-classic .swiper-button-next,
+.swiper-comics-classic .swiper-button-prev {
+  background-color: aliceblue;
+  padding: 3em 1em;
+  color: black;
+  border: 2px solid red;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 .fullscreen-container-scroll {

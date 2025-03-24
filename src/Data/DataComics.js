@@ -2,16 +2,20 @@
 import coverInterstellar from "../assets/img/viaggioIntStellar/cover.jpg";
 import coverVecchioCinese from "../assets/img/vecchioCinese/FINITO4.jpg";
 import coverPeopleFucked from "../assets/img/peopleFucked/Image053.png";
-import coverOdiEtAmo from "../assets/img/odiEtAmo/cover.jpg";
+import coverOdiEtAmo from "../assets/img/odiEtAmo/cover2.png";
 
-//characters
+//CHARACTERS
+//viaggioInterstellare
 import kunVerme from "../assets/img/viaggioIntStellar/character/kunVerme.png";
 import pizzamafia from "../assets/img/viaggioIntStellar/character/pizzamafia.png";
+import microfono1 from "../assets/img/viaggioIntStellar/character/mic1.png";
+import microfono2 from "../assets/img/viaggioIntStellar/character/mic2.png";
 
-//comics
+//cCOVER
 import odietamo from "../assets/img/odiEtAmo/odi.et.amo.siteversion2.png";
 import peopleFuckedScroll from "../assets/img/peopleFucked/scorrimento.png";
 import viaggioIntStellar from "../assets/img/viaggioIntStellar/completa.png";
+import vecchioCinese from "../assets/img/vecchioCinese/completo2.png";
 
 //CLASSICMODE
 //odietamo
@@ -56,6 +60,14 @@ import viaggio11 from "../assets/img/viaggioIntStellar/classic/11.jpg";
 import viaggio12 from "../assets/img/viaggioIntStellar/classic/12.jpg";
 import viaggio13 from "../assets/img/viaggioIntStellar/classic/13.jpg";
 
+//vecchioCinese
+import vecchio1 from "../assets/img/vecchioCinese/classic/1.png";
+import vecchio2 from "../assets/img/vecchioCinese/classic/2.png";
+import vecchio3 from "../assets/img/vecchioCinese/classic/3.png";
+import vecchio4 from "../assets/img/vecchioCinese/classic/4.png";
+import vecchio5 from "../assets/img/vecchioCinese/classic/5.png";
+import vecchio6 from "../assets/img/vecchioCinese/classic/6.png";
+
 const DataComics = [
   {
     id: "viaggio-interstellare",
@@ -76,6 +88,16 @@ const DataComics = [
         nome: "pizzamafia",
         foto: pizzamafia,
         descrizione: "pizzamafia è pizzamfia",
+      },
+      {
+        nome: "Il Microfono",
+        foto: microfono1,
+        descrizione: "Il microfono",
+      },
+      {
+        nome: "L'altro microfono",
+        foto: microfono2,
+        descrizione: "come i coglioni e i carabinieri. vanno sempre a coppia",
       },
     ],
     classicMode: [
@@ -139,7 +161,7 @@ const DataComics = [
     cover: coverVecchioCinese,
     anno: "2019",
     produzione: "Digitale",
-    scrollMode: odietamo,
+    scrollMode: vecchioCinese,
     storyline:
       "Vecchio Cinese Random è un fumetto che narra la storia di un vecchio cinese che, dopo aver perso tutto, decide di iniziare una nuova vita in un paese straniero. Il fumetto racconta le sue avventure e le sue disavventure in un mondo che non conosce.",
     cast: [
@@ -151,56 +173,28 @@ const DataComics = [
     ],
     classicMode: [
       {
-        pagina: "cover",
-        img: odietamo0,
-      },
-      {
         pagina: 1,
-        img: odietamo1,
+        img: vecchio1,
       },
       {
         pagina: 2,
-        img: odietamo2,
+        img: vecchio2,
       },
       {
         pagina: 3,
-        img: odietamo3,
+        img: vecchio3,
       },
       {
         pagina: 4,
-        img: odietamo4,
+        img: vecchio4,
       },
       {
         pagina: 5,
-        img: odietamo5,
+        img: vecchio5,
       },
       {
         pagina: 6,
-        img: odietamo6,
-      },
-      {
-        pagina: 7,
-        img: odietamo7,
-      },
-      {
-        pagina: 8,
-        img: odietamo8,
-      },
-      {
-        pagina: 9,
-        img: odietamo9,
-      },
-      {
-        pagina: 10,
-        img: odietamo10,
-      },
-      {
-        pagina: 11,
-        img: odietamo11,
-      },
-      {
-        pagina: 12,
-        img: odietamo11,
+        img: vecchio6,
       },
     ],
   },
