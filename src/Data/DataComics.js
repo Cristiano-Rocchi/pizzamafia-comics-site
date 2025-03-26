@@ -102,7 +102,7 @@ const DataComics = [
         descrizione: "Il piccolo Autore diventa il grande protagonista.",
       },
       {
-        nome: "Il Microfono",
+        nome: "Microfono",
         foto: microfono1,
         descrizione: "Il Signor Microfono, veicolatore di verità.",
       },
