@@ -88,22 +88,23 @@ const DataComics = [
     produzione: "Digitale",
     scrollMode: viaggioIntStellar,
     storyline:
-      "Viaggio Interstellare è un fumetto che narra la storia di un gruppo di astronauti che partono per un viaggio interstellare alla ricerca di un nuovo pianeta abitabile. Il viaggio, però, non è come se lo aspettavano e dovranno affrontare molte difficoltà.",
+      "Un intervista che nessuno ha chiesto? Un viaggio intergalattico? Un tributo? Oppure un flusso di coscenza? Niente di tutto questo... è solo pizzamafia che parla!",
     cast: [
       {
         nome: "Kun il Verme",
         foto: kunVerme,
-        descrizione: "Kun è un verme che vive nel terreno del pianeta Terra",
+        descrizione:
+          "Il più grande presentatore della galassia Vermestre. In onda sugli schermi terrestri solo per noi.",
       },
       {
         nome: "pizzamafia",
         foto: pizzamafia,
-        descrizione: "pizzamafia è pizzamfia",
+        descrizione: "Il piccolo Autore diventa il grande protagonista.",
       },
       {
         nome: "Il Microfono",
         foto: microfono1,
-        descrizione: "Il microfono",
+        descrizione: "Il Signor Microfono, veicolatore di verità.",
       },
       {
         nome: "L'altro microfono",
@@ -174,17 +175,19 @@ const DataComics = [
     produzione: "Digitale",
     scrollMode: vecchioCinese,
     storyline:
-      "Vecchio Cinese Random è un fumetto che narra la storia di un vecchio cinese che, dopo aver perso tutto, decide di iniziare una nuova vita in un paese straniero. Il fumetto racconta le sue avventure e le sue disavventure in un mondo che non conosce.",
+      "Ti hanno assegnato a random un nonno orientale. devi solo seguire i suoi consigli",
     cast: [
       {
         nome: "Vecchio Cinese",
         foto: vecchioChina,
-        descrizione: "Kun è un verme che vive nel terreno del pianeta Terra",
+        descrizione:
+          "cuore in pace e testa per la guerra. forse è già comparso in detective conan.",
       },
       {
         nome: "Plot Twist",
         foto: plotTwist,
-        descrizione: "Kun è un verme che vive nel terreno del pianeta Terra",
+        descrizione:
+          "Tiragli la coda e ti dirà una verita. oppure una scoreggia.",
       },
     ],
     classicMode: [
@@ -221,18 +224,19 @@ const DataComics = [
     anno: "2017",
     produzione: "Digitale",
     scrollMode: peopleFuckedScroll,
-    storyline:
-      "Vecchio Cinese Random è un fumetto che narra la storia di un vecchio cinese che, dopo aver perso tutto, decide di iniziare una nuova vita in un paese straniero. Il fumetto racconta le sue avventure e le sue disavventure in un mondo che non conosce.",
+    storyline: "bo",
     cast: [
       {
         nome: "Pizzamafia Bianco",
         foto: pizzamafiaBianco,
-        descrizione: "Kun è un verme che vive nel terreno del pianeta Terra",
+        descrizione:
+          "Pizzamafia è bianco perche troppo fatto. e anche un pò impaurito",
       },
       {
         nome: "Cartello",
         foto: cartelloPeople,
-        descrizione: "Kun è un verme che vive nel terreno del pianeta Terra",
+        descrizione:
+          "un disclaimer animato. animato da una mano sconosciuta...",
       },
     ],
     classicMode: [
@@ -285,18 +289,17 @@ const DataComics = [
     anno: "2022",
     produzione: "Digitale",
     scrollMode: odietamo,
-    storyline:
-      "Vecchio Cinese Random è un fumetto che narra la storia di un vecchio cinese che, dopo aver perso tutto, decide di iniziare una nuova vita in un paese straniero. Il fumetto racconta le sue avventure e le sue disavventure in un mondo che non conosce.",
+    storyline: "bo",
     cast: [
       {
         nome: "Pizzamafia Verde",
         foto: pizzamafiaVerde,
-        descrizione: "Kun è un verme che vive nel terreno del pianeta Terra",
+        descrizione: "Pizzamafia visto con gli occhi di... Pizzamafia",
       },
       {
         nome: "Leboya",
         foto: leboya,
-        descrizione: "in onore di Zerocalcare arriva Leboya.",
+        descrizione: "in onore di Zerocalcare... ecco Leboya.",
       },
     ],
     classicMode: [
