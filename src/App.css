@@ -6,10 +6,6 @@
   padding: 0;
 }
 /*SFONDO*/
-#root {
-  background-image: url("/src/assets/img/bg-home/bg-home.png");
-  background-size: cover;
-}
 
 /*-----FONT-----*/
 @font-face {

@@ -5,11 +5,25 @@
 }
 .background-home {
   height: 89vh;
+  background: url("../../assets/img/bg-home/bg-home.png") no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+}
+
+/*SECTION-INFO*/
+.section-intro {
+  .img-pizzamafia {
+    width: 80%;
+  }
+  .img-cloud {
+    position: absolute;
+    z-index: 999999999;
+    top: -50px;
+    left: 400px;
+  }
 }
 
 .card-home {
