@@ -5,7 +5,7 @@ import BookIcons from "../../assets/icons/book.png";
 import DataComics from "../../Data/DataComics";
 import { useNavigate } from "react-router-dom";
 import imgPizzamafia from "../../assets/img/bg-home/pizzamafia.png";
-import cloud from "../../assets/img/bg-home/1804-m10-i002-n008-e05p-55e9fcee5ea434ca81daa6e7bcf59d6aa21dd06b28d823ccc5a891d1fda7d224-removebg-preview.png";
+import cloud from "../../assets/img/bg-home/ballonpng.png";
 //librerie
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";

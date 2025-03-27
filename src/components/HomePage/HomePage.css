@@ -21,8 +21,10 @@
   .img-cloud {
     position: absolute;
     z-index: 999999999;
-    top: -50px;
-    left: 400px;
+    top: 0;
+    left: 450px;
+    width: 450px;
+    height: 300px;
   }
 }
 
