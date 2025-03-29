@@ -13,22 +13,6 @@
   position: relative;
 }
 
-/*SECTION-INFO*/
-.section-intro {
-  position: relative;
-  right: 100px;
-  bottom: 30px;
-  .img-pizzamafia {
-    width: 70%;
-  }
-  .img-cloud {
-    position: absolute;
-    top: -90px;
-    z-index: 999999999;
-    right: -100px;
-  }
-}
-
 /* Animatione BOUNCE TOOLTIP */
 @keyframes bounce {
   0% {
@@ -76,6 +60,10 @@
 
 /*-------------------------NUOVE-------------------------*/
 
+.sect-intro {
+  position: relative;
+  right: 100px;
+}
 .sect-intro img {
   width: 170px;
 }
@@ -119,7 +107,7 @@
     .all-comics {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
+      gap: 11px;
     }
     .all-comics img {
       width: 200px;
@@ -130,6 +118,7 @@
       transition: background-color 2s ease;
       background: rgba(12, 12, 12, 0.8);
       backdrop-filter: blur(25px);
+      border-radius: 10px;
     }
     .card-comic:hover {
       transform: scale(1.2);
@@ -199,6 +188,7 @@
       border: 1px solid black;
       color: black;
       padding-inline: 20px;
+      font-size: 1.8em;
     }
     .title-header h2:hover {
       letter-spacing: 3px;
@@ -272,7 +262,7 @@
   .tippy-cast .tippy-content {
     background-color: black;
     font-size: 1.1em;
-    max-height: 310px;
+    max-height: 300px;
     overflow-y: auto;
   }
   .cast-member {
@@ -284,5 +274,50 @@
   .cast-info p:first-child {
     font-weight: bold;
     border-bottom: 1px solid #e0e0e0;
+  }
+  .cast-photo {
+    width: 80px;
+    height: 100px;
+  }
+}
+
+/*-----DRAWINGS-----*/
+.sect-title2 {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  h1 {
+    background-color: #e0e0e0;
+    border: 1px solid black;
+    color: black;
+    display: inline-block;
+    padding: 1px 20px;
+    transform: rotate(-6deg);
+  }
+}
+.sect-works2 {
+  .all-drawings {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 11px;
+    img {
+      width: 200px;
+    }
+    .card-drawing {
+      padding: 10px;
+      border: 2px solid #b80217;
+      transition: background-color 2s ease;
+      background: rgba(12, 12, 12, 0.8);
+      backdrop-filter: blur(25px);
+      border-radius: 10px;
+    }
+    .card-drawing:hover {
+      transform: scale(1.2);
+      background-color: #ff073a;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+      z-index: 9;
+      border-color: black;
+    }
   }
 }
