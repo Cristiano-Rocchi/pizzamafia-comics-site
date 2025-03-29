@@ -20,7 +20,6 @@ const Homepage = () => {
   //Hook
   const navigate = useNavigate();
   const [swiperInstance, setSwiperInstance] = useState(null);
-  const [swiperInstance2, setSwiperInstance2] = useState(null);
 
   //FUNZIONI
   const handleComicClick = (index) => {
@@ -29,11 +28,6 @@ const Homepage = () => {
     }
   };
 
-  const handleDrawingClick = (index) => {
-    if (swiperInstance2) {
-      swiperInstance2.slideTo(index);
-    }
-  };
   //MODALI CAST E STORYLINE
   const renderCastContent = (cast) => {
     return (
@@ -77,7 +71,7 @@ const Homepage = () => {
           </Col>
         </Row>
         <Col className="sect-title" xs={12}>
-          <h1>Fumetti</h1>
+          <h1>Sfoglia i Fumetti</h1>
         </Col>
 
         <Row className="sect-works d-flex justify-content-end">

@@ -1,22 +1,9 @@
 /*TITOLO*/
-.title-body {
-  display: flex;
-  flex-direction: column;
-  margin-top: 40px;
-}
-.title-body img {
-  width: 35px;
-  margin: auto;
 
-  opacity: 0;
-}
 .title-body:hover {
   cursor: pointer;
 }
-.title-body:hover img {
-  opacity: 1;
-  animation: moveArrowVertical 1s infinite ease-in-out;
-}
+
 .logo-navbar {
   color: #e0e0e0;
   font-family: "LogoFont", sans-serif;
@@ -25,11 +12,15 @@
 
 /*NAVBAR BODY*/
 .nav-body {
+  width: 95%;
   height: 11vh;
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(25px);
-  border-bottom: 3px solid #b80217;
+  border: 3px solid #b80217;
+  border-top: none;
   position: relative;
+  margin: auto;
+  border-radius: 0 0 15px 15px;
 }
 .nav2 {
   color: #e0e0e0;
@@ -162,5 +153,30 @@
 
   h4:hover::after {
     clip-path: inset(0 0 0 0);
+  }
+}
+
+/*---------TOOLTIPS----------*/
+.comics-tooltip {
+  font-family: "AnimeFont", sans-serif;
+  img {
+    width: 90px;
+  }
+  h5 {
+    margin: auto;
+    margin-left: 10px;
+    font-size: 1.3em;
+  }
+  .text-end div {
+    background-color: #e0e0e0;
+    color: black;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30%;
+    height: 20px;
+    width: 20px;
+    margin-left: 5px;
   }
 }
