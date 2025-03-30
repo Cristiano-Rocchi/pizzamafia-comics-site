@@ -93,12 +93,17 @@
     justify-content: center;
     gap: 50px;
     h1 {
-      background-color: #e0e0e0;
       border: 1px solid black;
-      color: black;
+      color: #e0e0e0;
       display: inline-block;
       padding: 1px 20px;
       transform: rotate(-6deg);
+    }
+    h1.active {
+      background-color: #e0e0e0;
+      box-shadow: 0px 0px 30px 0px rgba(224, 224, 224, 0.92);
+      color: black;
+      border-color: black;
     }
   }
 
@@ -282,42 +287,26 @@
 }
 
 /*-----DRAWINGS-----*/
-.sect-title2 {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  h1 {
-    background-color: #e0e0e0;
-    border: 1px solid black;
-    color: black;
-    display: inline-block;
-    padding: 1px 20px;
-    transform: rotate(-6deg);
+
+.sect-drawings {
+  /* FILA 1 */
+  .container-card-drawing-1 {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
   }
-}
-.sect-works2 {
-  .all-drawings {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 11px;
-    img {
-      width: 200px;
-    }
-    .card-drawing {
-      padding: 10px;
-      border: 2px solid #b80217;
-      transition: background-color 2s ease;
-      background: rgba(12, 12, 12, 0.8);
-      backdrop-filter: blur(25px);
-      border-radius: 10px;
-    }
-    .card-drawing:hover {
-      transform: scale(1.2);
-      background-color: #ff073a;
-      transition: transform 0.2s ease;
-      cursor: pointer;
-      z-index: 9;
-      border-color: black;
-    }
+
+  /* FILA 2 */
+  .container-card-drawing-2 {
+    display: flex;
+    justify-content: center;
+    gap: 600px;
+  }
+
+  /* FILA 3 */
+  .container-card-drawing-3 {
+    display: flex;
+    justify-content: center;
+    gap: 250px;
   }
 }

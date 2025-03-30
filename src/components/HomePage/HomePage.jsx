@@ -20,6 +20,7 @@ const Homepage = () => {
   //Hook
   const navigate = useNavigate();
   const [swiperInstance, setSwiperInstance] = useState(null);
+  const [activeSection, setActiveSection] = useState("comics");
 
   //FUNZIONI
   const handleComicClick = (index) => {
@@ -82,31 +83,372 @@ const Homepage = () => {
             </div>
           </Col>
         </Row>
-        <Col className="sect-title" xs={12}>
-          <h1>Sfoglia i Fumetti</h1>
-        </Col>
 
-        <Row className="sect-works d-flex justify-content-end">
-          <Col xs={12}>
-            <div className="d-flex justify-content-between">
-              <div className="comics-home-container">
-                <h2>tutti i fumetti</h2>
-                <div className="all-comics">
-                  {DataComics.map((element, index) => (
-                    <div
-                      key={index}
-                      className="card-comic"
-                      onClick={() => handleComicClick(index)}
+        <Col className="sect-title" xs={12}>
+          <h1
+            onClick={() => setActiveSection("comics")}
+            className={activeSection === "comics" ? "active" : ""}
+          >
+            Sfoglia i Fumetti
+          </h1>
+          <h1
+            onClick={() => setActiveSection("drawings")}
+            className={activeSection === "drawings" ? "active" : ""}
+          >
+            Sfoglia i Disegni
+          </h1>
+        </Col>
+        {/* --------------COMICS------------ */}
+        {activeSection === "comics" ? (
+          <Row className="sect-works d-flex justify-content-end">
+            <Col xs={12}>
+              <div className="d-flex justify-content-between">
+                <div className="comics-home-container">
+                  <h2>tutti i fumetti</h2>
+                  <div className="all-comics">
+                    {DataComics.map((element, index) => (
+                      <div
+                        key={index}
+                        className="card-comic"
+                        onClick={() => handleComicClick(index)}
+                      >
+                        <img src={element.cover} alt={element.titolo} />
+                        <h5>{element.titolo}</h5>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="comics-slide-home">
+                  <motion.div
+                    className="card-home"
+                    initial={{ y: -200, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 150,
+                      damping: 10,
+                    }}
+                  >
+                    <Swiper
+                      className="swiper-home"
+                      rewind={true}
+                      navigation={true}
+                      modules={[Navigation]}
+                      onSwiper={(swiper) => setSwiperInstance(swiper)}
+                      onInit={(swiper) => {
+                        const nextButton = swiper.navigation.nextEl;
+                        const prevButton = swiper.navigation.prevEl;
+
+                        // Rimuovi le icone predefinite
+                        nextButton.innerHTML = ">";
+                        prevButton.innerHTML = "<";
+                      }}
                     >
-                      <img src={element.cover} alt={element.titolo} />
-                      <h5>{element.titolo}</h5>
-                    </div>
-                  ))}
+                      {DataComics.map((element, index) => (
+                        <SwiperSlide
+                          key={index}
+                          className="slide-1"
+                          style={{ backgroundImage: `url(${element.cover})` }}
+                        >
+                          <div className="slide-header">
+                            <div className="title-header">
+                              <h2>{element.titolo}</h2>
+                            </div>
+                            <div className="ancor-header">
+                              <Tippy
+                                className="tippy-story"
+                                content={element.storyline}
+                                placement="bottom"
+                                delay={100}
+                                interactive={true}
+                                animation="bounce"
+                              >
+                                <h5>Storyline</h5>
+                              </Tippy>
+                              <Tippy
+                                className="tippy-cast"
+                                content={renderCastContent(element.cast)}
+                                placement="bottom"
+                                delay={100}
+                                interactive={true}
+                                animation="bounce"
+                              >
+                                <h5>Cast</h5>
+                              </Tippy>
+                            </div>
+                          </div>
+                          <div className="slide-body">
+                            <Button
+                              variant="outline-primary"
+                              onClick={() => navigate(`/comics/${element.id}`)}
+                            >
+                              <img
+                                src={BookIcons}
+                                alt="Book Icon"
+                                className="book-icon"
+                              />
+                              Read
+                            </Button>
+                          </div>
+                          <div className="slide-footer">
+                            <p className="comics-info">
+                              {element.anno} | {element.produzione}
+                            </p>
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  </motion.div>
                 </div>
               </div>
-              <div className="comics-slide-home">
+            </Col>
+          </Row>
+        ) : (
+          <Row className="sect-drawings">
+            {/* --------------DRAWINGS------------ */}
+
+            <h2 className="text-center">drawing</h2>
+            <Col xs={12}>
+              {/* FILA 1 */}
+              <div className="container-card-drawing-1">
                 <motion.div
-                  className="card-home"
+                  className="card-drawing d-flex"
+                  initial={{
+                    x: "100vw",
+                    y: -100,
+                    opacity: 0,
+                    rotate: 15,
+                  }}
+                  animate={{
+                    x: 0,
+                    y: 0,
+                    opacity: 1,
+                    rotate: 0,
+                  }}
+                  transition={{
+                    x: {
+                      type: "spring",
+                      stiffness: 30, // Rigidità
+                      damping: 10, //  Smorzamento
+                      mass: 4, // Massa
+                    },
+                    y: {
+                      type: "keyframes",
+                      values: [-100, 50, -20, 10, 0],
+                      times: [0, 0.3, 0.6, 0.8, 1],
+                      duration: 3,
+                    },
+                    rotate: {
+                      type: "keyframes",
+                      values: [15, -10, 5, -2, 0],
+                      duration: 3,
+                    },
+                    opacity: {
+                      duration: 2,
+                    },
+                  }}
+                >
+                  <h3 className="p-5 border border-solid">Card 1</h3>
+                </motion.div>
+                <motion.div
+                  className="card-drawing d-flex"
+                  initial={{
+                    y: "100vh",
+                    x: 0,
+                    opacity: 0,
+                    rotate: 10,
+                  }}
+                  animate={{
+                    y: 0,
+                    x: 0,
+                    opacity: 1,
+                    rotate: 0,
+                  }}
+                  transition={{
+                    y: {
+                      type: "spring",
+                      stiffness: 30,
+                      damping: 8,
+                      mass: 2,
+                      bounce: 0.6,
+                    },
+                    x: {
+                      type: "keyframes",
+                      values: [0, 15, -10, 5, 0],
+                      times: [0, 0.3, 0.6, 0.8, 1],
+                      duration: 2,
+                    },
+                    rotate: {
+                      type: "spring",
+                      stiffness: 50,
+                      damping: 15,
+                      mass: 1,
+                    },
+                    opacity: {
+                      duration: 1.5,
+                    },
+                  }}
+                >
+                  <h3 className="p-5 border border-solid">Card 1</h3>
+                </motion.div>
+                <motion.div
+                  className="card-drawing d-flex"
+                  initial={{
+                    rotateY: 200,
+                    opacity: 0,
+                    scale: 0.8,
+                  }}
+                  animate={{
+                    rotateY: 0,
+                    opacity: 1,
+                    scale: 1,
+                  }}
+                  transition={{
+                    rotateY: {
+                      type: "tween",
+                      ease: "easeOut",
+                      duration: 1.2,
+                      delay: 0.3,
+                    },
+                    opacity: {
+                      duration: 0.8,
+                      ease: "easeOut",
+                    },
+                    scale: {
+                      type: "spring",
+                      stiffness: 150,
+                      damping: 10,
+                      delay: 0.2,
+                    },
+                  }}
+                  style={{
+                    transformStyle: "preserve-3d",
+                    backfaceVisibility: "hidden",
+                    perspective: 1000,
+                  }}
+                >
+                  <motion.div
+                    style={{
+                      transformOrigin: "center",
+                      backfaceVisibility: "hidden",
+                    }}
+                  >
+                    <h3 className="p-5 border border-solid">Card 1</h3>
+                  </motion.div>
+                </motion.div>
+                <motion.div
+                  className="card-drawing d-flex"
+                  initial={{
+                    x: 200,
+                    opacity: 0,
+                    rotate: 5,
+                  }}
+                  animate={{
+                    x: 0,
+                    opacity: 1,
+                    rotate: 0,
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 30,
+                    damping: 8,
+                    mass: 4,
+                    bounce: 0.4,
+                    delay: 1.3,
+                    velocity: 0.1,
+                  }}
+                >
+                  <h3 className="p-5 border border-solid">Card 1</h3>
+                </motion.div>
+              </div>
+
+              {/* FILA 2 */}
+              <div className="container-card-drawing-2">
+                <motion.div
+                  className="card-drawing d-flex"
+                  initial={{
+                    x: "100vw", // Partenza dall'angolo in basso a destra
+                    y: "100vh",
+                    opacity: 0,
+                    rotate: -15,
+                  }}
+                  animate={{
+                    x: 0,
+                    y: 0,
+                    opacity: 1,
+                    rotate: 0,
+                  }}
+                  transition={{
+                    x: {
+                      type: "spring",
+                      stiffness: 20,
+                      damping: 8,
+                      mass: 5,
+                    },
+                    y: {
+                      type: "keyframes",
+                      values: [200, -100, 50, -20, 10, 0],
+                      times: [0, 0.2, 0.4, 0.6, 0.8, 1],
+                      duration: 3,
+                    },
+                    rotate: {
+                      type: "keyframes",
+                      values: [-15, 10, -5, 3, -1, 0],
+                      duration: 3,
+                    },
+                    opacity: {
+                      duration: 2,
+                    },
+                  }}
+                >
+                  <h3 className="p-5 border border-solid">Card 1</h3>
+                </motion.div>
+
+                <motion.div
+                  className="card-drawing d-flex"
+                  initial={{
+                    x: 0,
+                    y: "100vh",
+                    opacity: 0,
+                    rotate: 15,
+                  }}
+                  animate={{
+                    x: 0,
+                    y: 0,
+                    opacity: 1,
+                    rotate: 0,
+                  }}
+                  transition={{
+                    y: {
+                      type: "spring",
+                      stiffness: 30,
+                      damping: 10,
+                      mass: 4,
+                      bounce: 0.6,
+                    },
+                    x: {
+                      type: "keyframes",
+                      values: [0, 20, -15, 10, 0],
+                      times: [0, 0.3, 0.6, 0.8, 1],
+                      duration: 3,
+                    },
+                    rotate: {
+                      type: "keyframes",
+                      values: [15, -10, 5, -2, 0],
+                      duration: 3,
+                    },
+                    opacity: {
+                      duration: 2,
+                    },
+                  }}
+                >
+                  <h3 className="p-5 border border-solid">Card 1</h3>
+                </motion.div>
+              </div>
+              {/* FILA 3 */}
+              <div className="container-card-drawing-3">
+                <motion.div
+                  className="card-drawing d-flex"
                   initial={{ y: -200, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{
@@ -115,80 +457,99 @@ const Homepage = () => {
                     damping: 10,
                   }}
                 >
-                  <Swiper
-                    className="swiper-home"
-                    rewind={true}
-                    navigation={true}
-                    modules={[Navigation]}
-                    onSwiper={(swiper) => setSwiperInstance(swiper)}
-                    onInit={(swiper) => {
-                      const nextButton = swiper.navigation.nextEl;
-                      const prevButton = swiper.navigation.prevEl;
-
-                      // Rimuovi le icone predefinite
-                      nextButton.innerHTML = ">";
-                      prevButton.innerHTML = "<";
-                    }}
-                  >
-                    {DataComics.map((element, index) => (
-                      <SwiperSlide
-                        key={index}
-                        className="slide-1"
-                        style={{ backgroundImage: `url(${element.cover})` }}
-                      >
-                        <div className="slide-header">
-                          <div className="title-header">
-                            <h2>{element.titolo}</h2>
-                          </div>
-                          <div className="ancor-header">
-                            <Tippy
-                              className="tippy-story"
-                              content={element.storyline}
-                              placement="bottom"
-                              delay={100}
-                              interactive={true}
-                              animation="bounce"
-                            >
-                              <h5>Storyline</h5>
-                            </Tippy>
-                            <Tippy
-                              className="tippy-cast"
-                              content={renderCastContent(element.cast)}
-                              placement="bottom"
-                              delay={100}
-                              interactive={true}
-                              animation="bounce"
-                            >
-                              <h5>Cast</h5>
-                            </Tippy>
-                          </div>
-                        </div>
-                        <div className="slide-body">
-                          <Button
-                            variant="outline-primary"
-                            onClick={() => navigate(`/comics/${element.id}`)}
-                          >
-                            <img
-                              src={BookIcons}
-                              alt="Book Icon"
-                              className="book-icon"
-                            />
-                            Read
-                          </Button>
-                        </div>
-                        <div className="slide-footer">
-                          <p className="comics-info">
-                            {element.anno} | {element.produzione}
-                          </p>
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
+                  <h3 className="p-5 border border-solid">Card 1</h3>
+                </motion.div>
+                <motion.div
+                  className="card-drawing d-flex"
+                  initial={{
+                    x: "-100vw", // Partenza fuori dalla sinistra dello schermo
+                    y: "100vh", // Partenza dal basso dello schermo
+                    opacity: 0,
+                    rotate: -15,
+                  }}
+                  animate={{
+                    x: 0,
+                    y: 0,
+                    opacity: 1,
+                    rotate: 0,
+                  }}
+                  transition={{
+                    x: {
+                      type: "spring",
+                      stiffness: 30,
+                      damping: 10,
+                      mass: 4,
+                    },
+                    y: {
+                      type: "keyframes",
+                      values: [100, -30, 15, -5, 0], // Effetto di rimbalzo in verticale
+                      times: [0, 0.3, 0.6, 0.8, 1],
+                      duration: 3,
+                    },
+                    rotate: {
+                      type: "keyframes",
+                      values: [-15, 10, -5, 2, 0], // Piccolo rimbalzo nella rotazione
+                      duration: 3,
+                    },
+                    opacity: {
+                      duration: 2,
+                    },
+                  }}
+                >
+                  <h3 className="p-5 border border-solid">Card 1</h3>
+                </motion.div>
+                <motion.div
+                  className="card-drawing d-flex"
+                  initial={{
+                    y: -500,
+                    x: 200,
+                    opacity: 0,
+                    rotateX: 180,
+                    rotateZ: -45,
+                    scale: 0.1,
+                    filter: "blur(20px) brightness(2)",
+                  }}
+                  animate={{
+                    y: 0,
+                    x: 0,
+                    opacity: 1,
+                    rotateX: 0,
+                    rotateZ: 0,
+                    scale: 1,
+                    filter: "blur(0px) brightness(1)",
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    ease: [0.2, 0.8, 0.4, 1],
+                    rotateZ: {
+                      type: "keyframes",
+                      values: [0, 15, -10, 5, 0],
+                      times: [0, 0.25, 0.5, 0.75, 1],
+                      duration: 2,
+                    },
+                    scale: {
+                      type: "keyframes",
+                      values: [1, 1.1, 0.95, 1.05, 1],
+                      duration: 2,
+                    },
+                    delay: 0.3,
+                  }}
+                  style={{
+                    transformStyle: "preserve-3d",
+                    perspective: "1000px",
+                  }}
+                  whileHover={{
+                    rotateY: 360,
+                    scale: 1.2,
+                    transition: { duration: 1.5 },
+                  }}
+                >
+                  <h3 className="p-5 border border-solid">Card 1</h3>
                 </motion.div>
               </div>
-            </div>
-          </Col>
-        </Row>
+            </Col>
+          </Row>
+        )}
       </Container>
     </>
   );
