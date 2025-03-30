@@ -13,45 +13,6 @@ import "../navbar/Navbar.css";
 const MyNavbar = () => {
   //---------STATI-------
 
-  //Modale FUMETTI
-  const renderComics = () => {
-    return (
-      <>
-        {" "}
-        <div>
-          {DataComics.slice(0, 4).map((element, index) => (
-            <div key={index} className="d-flex mb-2">
-              <img src={element.cover} alt="" />
-              <h5>{element.titolo}</h5>
-            </div>
-          ))}{" "}
-        </div>
-        <p className="text-end d-flex justify-content-end">
-          vedi tutti <div>&gt;</div>
-        </p>
-      </>
-    );
-  };
-
-  //Modale DISEGNI
-  const renderDrawings = () => {
-    return (
-      <>
-        <div>
-          {DataDrawings.slice(0, 4).map((element, index) => (
-            <div key={index} className="d-flex mb-2">
-              <img src={element.img} alt="" />
-              <h5>{element.titolo}</h5>
-            </div>
-          ))}
-        </div>
-        <p className="text-end d-flex justify-content-end">
-          vedi tutti <div>&gt;</div>
-        </p>
-      </>
-    );
-  };
-
   return (
     <>
       <Navbar expand="lg" className="nav-body">
@@ -63,34 +24,16 @@ const MyNavbar = () => {
             <Nav className="nav2" href="#home">
               Home
             </Nav>
-            {/*  FUMETTI */}
-            <Tippy
-              className="comics-tooltip"
-              content={renderComics()}
-              placement="bottom"
-              delay={300}
-              interactive={true}
-              animation="bounce"
-              trigger="mouseenter"
-              appendTo={document.body}
-            >
-              <span className="nav2">FUMETTI</span>
-            </Tippy>
-            <Nav className="nav2" href="#link">
-              Personaggi
+            <Nav className="nav2" href="#home">
+              FUMETTI
             </Nav>
-            <Tippy
-              className="comics-tooltip"
-              content={renderDrawings()}
-              placement="bottom"
-              delay={300}
-              interactive={true}
-              animation="bounce"
-              trigger="mouseenter"
-              appendTo={document.body}
-            >
-              <span className="nav2">DISEGNI</span>
-            </Tippy>
+            <Nav className="nav2" href="#home">
+              PERSONAGGI
+            </Nav>
+            <Nav className="nav2" href="#home">
+              DISEGNI
+            </Nav>
+
             <Nav className="nav2" href="#link">
               Download
             </Nav>

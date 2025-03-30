@@ -62,10 +62,22 @@ const Homepage = () => {
               <img src={imgPizzamafia} alt="" />
 
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-                quasi optio repudiandae molestiae tenetur totam laudantium. Est
-                accusamus quae eaque assumenda iusto architecto, magnam,
-                molestias, voluptatem exercitationem asperiores debitis hic.
+                Non si possono scrivere racconti senza sapere la struttura
+                narrativa o la conoscenza del linguaggio fumettistico. <br />{" "}
+                <br />
+                Non si possono disegnare personaggi senza sapere le regole dell'
+                anatomia, della prospettiva dell' espressività. <br /> <br />
+                Non si possono scrivere fumetti senza avere le basi sulla
+                composizione e sulle inquadrature delle scene. <br />
+                <br />
+                Invece io l'ho fatto ! <br />
+                <br />
+                <strong>
+                  Pizzamafia è discorsi strani su disegni brutti,
+                  <br />
+                  Qui dentro non c'è arte. <br />
+                  Vai via..
+                </strong>
               </p>
             </div>
           </Col>
