@@ -210,9 +210,10 @@ const Homepage = () => {
             <h2 className="text-center">drawing</h2>
             <Col xs={12}>
               {/* FILA 1 */}
-              <div className="container-card-drawing-1">
+              <div className="container-card-drawing-1 mb-2">
                 <motion.div
                   className="card-drawing d-flex"
+                  style={{ position: "relative", bottom: "20px" }}
                   initial={{
                     x: "100vw",
                     y: -100,
@@ -248,10 +249,15 @@ const Homepage = () => {
                     },
                   }}
                 >
-                  <h3 className="p-5 border border-solid">Card 1</h3>
+                  <div>
+                    <h3 className="p-5 border border-solid">Card 1</h3>
+
+                    <p className="text-center">• Titolo •</p>
+                  </div>
                 </motion.div>
                 <motion.div
                   className="card-drawing d-flex"
+                  style={{ position: "relative", top: "50px", left: "50px" }}
                   initial={{
                     y: "100vh",
                     x: 0,
@@ -271,28 +277,45 @@ const Homepage = () => {
                       damping: 8,
                       mass: 2,
                       bounce: 0.6,
+                      delay: 1.5,
                     },
                     x: {
                       type: "keyframes",
                       values: [0, 15, -10, 5, 0],
                       times: [0, 0.3, 0.6, 0.8, 1],
                       duration: 2,
+                      delay: 1.5,
                     },
                     rotate: {
                       type: "spring",
                       stiffness: 50,
                       damping: 15,
                       mass: 1,
+                      delay: 1.5,
                     },
                     opacity: {
                       duration: 1.5,
+                      delay: 1.5,
                     },
                   }}
                 >
-                  <h3 className="p-5 border border-solid">Card 1</h3>
+                  <div>
+                    <h3 className="p-5 border border-solid">Card 1</h3>
+
+                    <p className="text-center">• Titolo •</p>
+                  </div>
                 </motion.div>
+
                 <motion.div
                   className="card-drawing d-flex"
+                  style={{
+                    position: "relative",
+                    bottom: "60px",
+                    left: "30px",
+                    transformStyle: "preserve-3d",
+                    backfaceVisibility: "hidden",
+                    perspective: 1000,
+                  }}
                   initial={{
                     rotateY: 200,
                     opacity: 0,
@@ -308,23 +331,19 @@ const Homepage = () => {
                       type: "tween",
                       ease: "easeOut",
                       duration: 1.2,
-                      delay: 0.3,
+                      delay: 3,
                     },
                     opacity: {
                       duration: 0.8,
                       ease: "easeOut",
+                      delay: 2,
                     },
                     scale: {
                       type: "spring",
                       stiffness: 150,
                       damping: 10,
-                      delay: 0.2,
+                      delay: 2.2,
                     },
-                  }}
-                  style={{
-                    transformStyle: "preserve-3d",
-                    backfaceVisibility: "hidden",
-                    perspective: 1000,
                   }}
                 >
                   <motion.div
@@ -333,9 +352,14 @@ const Homepage = () => {
                       backfaceVisibility: "hidden",
                     }}
                   >
-                    <h3 className="p-5 border border-solid">Card 1</h3>
+                    <div>
+                      <h3 className="p-5 border border-solid">Card 1</h3>
+
+                      <p className="text-center">• Titolo •</p>
+                    </div>
                   </motion.div>
                 </motion.div>
+
                 <motion.div
                   className="card-drawing d-flex"
                   initial={{
@@ -358,16 +382,20 @@ const Homepage = () => {
                     velocity: 0.1,
                   }}
                 >
-                  <h3 className="p-5 border border-solid">Card 1</h3>
+                  <div>
+                    <h3 className="p-5 border border-solid">Card 1</h3>
+
+                    <p className="text-center">• Titolo •</p>
+                  </div>
                 </motion.div>
               </div>
 
               {/* FILA 2 */}
-              <div className="container-card-drawing-2">
+              <div className="container-card-drawing-2 mb-5">
                 <motion.div
                   className="card-drawing d-flex"
                   initial={{
-                    x: "100vw", // Partenza dall'angolo in basso a destra
+                    x: "100vw",
                     y: "100vh",
                     opacity: 0,
                     rotate: -15,
@@ -401,11 +429,15 @@ const Homepage = () => {
                     },
                   }}
                 >
-                  <h3 className="p-5 border border-solid">Card 1</h3>
+                  <div>
+                    <h3 className="p-5 border border-solid">Card 1</h3>
+                    <p className="text-center">● Titolo ●</p>
+                  </div>
                 </motion.div>
 
                 <motion.div
                   className="card-drawing d-flex"
+                  style={{ position: "relative", top: "20px", right: "150px" }}
                   initial={{
                     x: 0,
                     y: "100vh",
@@ -442,13 +474,18 @@ const Homepage = () => {
                     },
                   }}
                 >
-                  <h3 className="p-5 border border-solid">Card 1</h3>
+                  <div>
+                    <h3 className="p-5 border border-solid">Card 1</h3>
+
+                    <p className="text-center">• Titolo •</p>
+                  </div>
                 </motion.div>
               </div>
               {/* FILA 3 */}
-              <div className="container-card-drawing-3">
+              <div className="container-card-drawing-3 mb-5">
                 <motion.div
                   className="card-drawing d-flex"
+                  style={{ position: "relative", right: "100px" }}
                   initial={{ y: -200, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{
@@ -457,13 +494,22 @@ const Homepage = () => {
                     damping: 10,
                   }}
                 >
-                  <h3 className="p-5 border border-solid">Card 1</h3>
+                  <div>
+                    <h3 className="p-5 border border-solid">Card 1</h3>
+
+                    <p className="text-center">• Titolo •</p>
+                  </div>
                 </motion.div>
                 <motion.div
                   className="card-drawing d-flex"
+                  style={{
+                    position: "relative",
+                    bottom: "30px",
+                    right: "80px",
+                  }}
                   initial={{
-                    x: "-100vw", // Partenza fuori dalla sinistra dello schermo
-                    y: "100vh", // Partenza dal basso dello schermo
+                    x: "-100vw",
+                    y: "100vh",
                     opacity: 0,
                     rotate: -15,
                   }}
@@ -479,72 +525,75 @@ const Homepage = () => {
                       stiffness: 30,
                       damping: 10,
                       mass: 4,
+                      delay: 2.5,
                     },
                     y: {
                       type: "keyframes",
-                      values: [100, -30, 15, -5, 0], // Effetto di rimbalzo in verticale
+                      values: [100, -30, 15, -5, 0],
                       times: [0, 0.3, 0.6, 0.8, 1],
                       duration: 3,
+                      delay: 2.5,
                     },
                     rotate: {
                       type: "keyframes",
-                      values: [-15, 10, -5, 2, 0], // Piccolo rimbalzo nella rotazione
+                      values: [-15, 10, -5, 2, 0],
                       duration: 3,
+                      delay: 2.5,
+                    },
+                    opacity: {
+                      duration: 2,
+                      delay: 2.5,
+                    },
+                  }}
+                >
+                  <div>
+                    <h3 className="p-5 border border-solid">Card 1</h3>
+
+                    <p className="text-center">• Titolo •</p>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  className="card-drawing d-flex "
+                  style={{ position: "relative", top: "20px", left: "50px" }}
+                  initial={{
+                    x: "100vw",
+                    y: "100vh",
+                    opacity: 0,
+                    rotate: 30,
+                  }}
+                  animate={{
+                    x: ["100vw", "50vw", "-20vw", "0"],
+                    y: ["100vh", "-20vh", "10vh", "0"],
+                    opacity: 1,
+                    rotate: [30, -10, 5, 0],
+                  }}
+                  transition={{
+                    x: {
+                      type: "keyframes",
+                      duration: 4,
+                      ease: "easeInOut",
+                    },
+                    y: {
+                      type: "keyframes",
+                      duration: 4,
+                      ease: "easeInOut",
+                    },
+                    rotate: {
+                      type: "keyframes",
+                      duration: 4,
+                      ease: "easeInOut",
                     },
                     opacity: {
                       duration: 2,
                     },
                   }}
                 >
-                  <h3 className="p-5 border border-solid">Card 1</h3>
-                </motion.div>
-                <motion.div
-                  className="card-drawing d-flex"
-                  initial={{
-                    y: -500,
-                    x: 200,
-                    opacity: 0,
-                    rotateX: 180,
-                    rotateZ: -45,
-                    scale: 0.1,
-                    filter: "blur(20px) brightness(2)",
-                  }}
-                  animate={{
-                    y: 0,
-                    x: 0,
-                    opacity: 1,
-                    rotateX: 0,
-                    rotateZ: 0,
-                    scale: 1,
-                    filter: "blur(0px) brightness(1)",
-                  }}
-                  transition={{
-                    duration: 2.5,
-                    ease: [0.2, 0.8, 0.4, 1],
-                    rotateZ: {
-                      type: "keyframes",
-                      values: [0, 15, -10, 5, 0],
-                      times: [0, 0.25, 0.5, 0.75, 1],
-                      duration: 2,
-                    },
-                    scale: {
-                      type: "keyframes",
-                      values: [1, 1.1, 0.95, 1.05, 1],
-                      duration: 2,
-                    },
-                    delay: 0.3,
-                  }}
-                  style={{
-                    transformStyle: "preserve-3d",
-                    perspective: "1000px",
-                  }}
-                  whileHover={{
-                    rotateY: 360,
-                    scale: 1.2,
-                    transition: { duration: 1.5 },
-                  }}
-                >
-                  <h3 className="p-5 border border-solid">Card 1</h3>
+                  <div>
+                    <h3 className="p-5 border border-solid">Card 1</h3>
+
+                    <p className="text-center">• Titolo •</p>
+                  </div>
                 </motion.div>
               </div>
             </Col>
