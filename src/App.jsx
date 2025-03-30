@@ -5,6 +5,7 @@ import Homepage from "./components/HomePage/HomePage";
 import MyNavbar from "./components/navbar/Navbar";
 import Comics from "./components/Comics/Comics";
 import Characters from "./components/Characters/Characters";
+import AllComics from "./components/AllComics/AllComics";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <MyNavbar />
         <Routes>
           <Route path="/" element={<Homepage />} />
+          <Route path="/comics" element={<AllComics />} />
           <Route path="/comics/:id" element={<Comics />} />
           <Route path="/characters" element={<Characters />} />
         </Routes>

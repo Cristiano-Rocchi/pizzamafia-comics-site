@@ -1,0 +1,126 @@
+/*TITOLO*/
+.title-comics {
+  margin-bottom: 15px;
+
+  h1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  img {
+    width: 230px;
+    display: flex;
+    margin: auto;
+    position: relative;
+    bottom: 8px;
+  }
+}
+
+/*CARD TUTTI I PERSONAGGI*/
+.card-comics-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+
+  .card-comics {
+    background: rgba(12, 12, 12, 0.8);
+    backdrop-filter: blur(25px);
+    border: 2px solid #b80217;
+    transition: background-color 2s ease;
+    border-radius: 10px;
+    color: #e0e0e0;
+    padding: 5px;
+
+    img {
+      width: 300px;
+    }
+
+    h4 {
+      font-size: 1em;
+      margin-block: auto;
+    }
+  }
+
+  .card-comics:hover {
+    transform: scale(1.1);
+    background-color: #ff073a;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    z-index: 9;
+    border-color: black;
+  }
+  .card-comics:hover img {
+  }
+}
+.card-comics:hover .comic-year {
+  transform: translateY(0);
+}
+.card-comics-details {
+  background: rgba(12, 12, 12, 0.8);
+  backdrop-filter: blur(25px);
+  border: 2px solid #b80217;
+  color: #e0e0e0;
+  padding: 20px;
+  text-align: center;
+
+  img {
+    max-width: 300px;
+  }
+
+  h2 {
+    background-color: #e0e0e0;
+    border: 1px solid black;
+    color: black;
+    padding-inline: 20px;
+  }
+  h3 {
+    background-color: #e0e0e0;
+    border: 1px solid black;
+    color: black;
+    padding-inline: 20px;
+    width: fit-content;
+    margin: auto;
+    transform: rotate(3deg);
+  }
+  h5 {
+    text-align: left;
+    span {
+      background-color: #b1b1b1;
+      border: 1px solid black;
+      color: black;
+      padding-inline: 10px;
+      font-size: 0.7em;
+    }
+  }
+  hr {
+    margin: 15px auto;
+    color: red;
+  }
+
+  button {
+    color: #e0e0e0;
+    border-color: black;
+    letter-spacing: 10px;
+  }
+
+  .cast-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    color: black;
+    margin-top: 15px;
+
+    img {
+      width: 70px;
+      height: 90px;
+    }
+    p {
+      font-size: 13px;
+    }
+    .cast-member {
+      border: 2px solid black;
+      border-radius: 5px;
+      background-color: #b1b1b1;
+    }
+  }
+}
