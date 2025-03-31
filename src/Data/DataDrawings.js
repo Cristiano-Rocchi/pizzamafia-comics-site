@@ -3,7 +3,7 @@ import Disegno2 from "../assets/img/drawings/disegno 2.png";
 import Disegno2_1 from "../assets/img/drawings/disegno2.1.jpg";
 import Disegno3 from "../assets/img/drawings/disegno3.jpg";
 import Disegno4 from "../assets/img/drawings/disegno4.png";
-import Disegno4_1 from "../assets/img/drawings/disegno4.1.png";
+import Disegno5 from "../assets/img/drawings/disegno5.png";
 import Graffito from "../assets/img/drawings/graffito2.jpg";
 
 const DataDrawings = [
@@ -22,17 +22,24 @@ const DataDrawings = [
     produzione: "Digitale",
   },
   {
-    id: "a-ticket-for-hell",
-    titolo: "A ticket for Hell",
+    id: "buon-appetito",
+    titolo: "Buon Appetito",
     img: Disegno3,
     anno: 2017,
     produzione: "Digitale",
   },
   {
-    id: "buon-appetito",
-    titolo: "Buon Appetito",
+    id: "save-that-shit",
+    titolo: "Save That Shit",
     img: Disegno4,
     anno: 2015,
+    produzione: "Digitale",
+  },
+  {
+    id: "a-ticket-for-hell",
+    titolo: "A Ticket For Hell",
+    img: Disegno5,
+    anno: 2018,
     produzione: "Digitale",
   },
   {

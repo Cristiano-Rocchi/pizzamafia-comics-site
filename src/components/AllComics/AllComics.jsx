@@ -51,7 +51,9 @@ const AllComics = () => {
                     </h5>
                   </div>
                   <div>
-                    <Button>Leggi</Button>
+                    <Button onClick={() => navigate(`/comics/${comicId}`)}>
+                      Leggi
+                    </Button>
                   </div>
                 </div>
                 <hr />

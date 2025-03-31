@@ -525,24 +525,24 @@ const Homepage = () => {
                       stiffness: 30,
                       damping: 10,
                       mass: 4,
-                      delay: 2.5,
+                      delay: 0.5,
                     },
                     y: {
                       type: "keyframes",
                       values: [100, -30, 15, -5, 0],
                       times: [0, 0.3, 0.6, 0.8, 1],
                       duration: 3,
-                      delay: 2.5,
+                      delay: 0.5,
                     },
                     rotate: {
                       type: "keyframes",
                       values: [-15, 10, -5, 2, 0],
                       duration: 3,
-                      delay: 2.5,
+                      delay: 0.5,
                     },
                     opacity: {
                       duration: 2,
-                      delay: 2.5,
+                      delay: 0.5,
                     },
                   }}
                 >
