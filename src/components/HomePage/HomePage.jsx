@@ -5,6 +5,7 @@ import BookIcons from "../../assets/icons/book.png";
 import DataComics from "../../Data/DataComics";
 import DataDrawings from "../../Data/DataDrawings";
 import { useNavigate } from "react-router-dom";
+
 import imgPizzamafia from "../../assets/img/bg-home/pizzamafia.png";
 
 //librerie
@@ -85,6 +86,7 @@ const Homepage = () => {
         </Row>
 
         <Col className="sect-title" xs={12}>
+          <div className="line-home1"></div>
           <h1
             onClick={() => setActiveSection("comics")}
             className={activeSection === "comics" ? "active" : ""}
@@ -97,6 +99,7 @@ const Homepage = () => {
           >
             Sfoglia i Disegni
           </h1>
+          <div className="line-home2"></div>
         </Col>
         {/* --------------COMICS------------ */}
         {activeSection === "comics" ? (
@@ -250,9 +253,11 @@ const Homepage = () => {
                   }}
                 >
                   <div>
-                    <h3 className="p-5 border border-solid">Card 1</h3>
-
-                    <p className="text-center">• Titolo •</p>
+                    <img
+                      src={DataDrawings[0].img}
+                      alt={DataDrawings[0].titolo}
+                    />
+                    <p className="text-center">• {DataDrawings[0].titolo} •</p>
                   </div>
                 </motion.div>
                 <motion.div
@@ -300,9 +305,11 @@ const Homepage = () => {
                   }}
                 >
                   <div>
-                    <h3 className="p-5 border border-solid">Card 1</h3>
-
-                    <p className="text-center">• Titolo •</p>
+                    <img
+                      src={DataDrawings[1].img}
+                      alt={DataDrawings[1].titolo}
+                    />
+                    <p className="text-center">• {DataDrawings[1].titolo} •</p>
                   </div>
                 </motion.div>
 
@@ -310,7 +317,7 @@ const Homepage = () => {
                   className="card-drawing d-flex"
                   style={{
                     position: "relative",
-                    bottom: "60px",
+                    top: "70px",
                     left: "30px",
                     transformStyle: "preserve-3d",
                     backfaceVisibility: "hidden",
@@ -353,40 +360,15 @@ const Homepage = () => {
                     }}
                   >
                     <div>
-                      <h3 className="p-5 border border-solid">Card 1</h3>
-
-                      <p className="text-center">• Titolo •</p>
+                      <img
+                        src={DataDrawings[2].img}
+                        alt={DataDrawings[2].titolo}
+                      />
+                      <p className="text-center">
+                        • {DataDrawings[2].titolo} •
+                      </p>
                     </div>
                   </motion.div>
-                </motion.div>
-
-                <motion.div
-                  className="card-drawing d-flex"
-                  initial={{
-                    x: 200,
-                    opacity: 0,
-                    rotate: 5,
-                  }}
-                  animate={{
-                    x: 0,
-                    opacity: 1,
-                    rotate: 0,
-                  }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 30,
-                    damping: 8,
-                    mass: 4,
-                    bounce: 0.4,
-                    delay: 1.3,
-                    velocity: 0.1,
-                  }}
-                >
-                  <div>
-                    <h3 className="p-5 border border-solid">Card 1</h3>
-
-                    <p className="text-center">• Titolo •</p>
-                  </div>
                 </motion.div>
               </div>
 
@@ -430,8 +412,11 @@ const Homepage = () => {
                   }}
                 >
                   <div>
-                    <h3 className="p-5 border border-solid">Card 1</h3>
-                    <p className="text-center">● Titolo ●</p>
+                    <img
+                      src={DataDrawings[4].img}
+                      alt={DataDrawings[4].titolo}
+                    />
+                    <p className="text-center">• {DataDrawings[4].titolo} •</p>
                   </div>
                 </motion.div>
 
@@ -475,9 +460,11 @@ const Homepage = () => {
                   }}
                 >
                   <div>
-                    <h3 className="p-5 border border-solid">Card 1</h3>
-
-                    <p className="text-center">• Titolo •</p>
+                    <img
+                      src={DataDrawings[5].img}
+                      alt={DataDrawings[5].titolo}
+                    />
+                    <p className="text-center">• {DataDrawings[5].titolo} •</p>
                   </div>
                 </motion.div>
               </div>
@@ -495,9 +482,11 @@ const Homepage = () => {
                   }}
                 >
                   <div>
-                    <h3 className="p-5 border border-solid">Card 1</h3>
-
-                    <p className="text-center">• Titolo •</p>
+                    <img
+                      src={DataDrawings[6].img}
+                      alt={DataDrawings[6].titolo}
+                    />
+                    <p className="text-center">• {DataDrawings[6].titolo} •</p>
                   </div>
                 </motion.div>
                 <motion.div
@@ -547,9 +536,11 @@ const Homepage = () => {
                   }}
                 >
                   <div>
-                    <h3 className="p-5 border border-solid">Card 1</h3>
-
-                    <p className="text-center">• Titolo •</p>
+                    <img
+                      src={DataDrawings[7].img}
+                      alt={DataDrawings[7].titolo}
+                    />
+                    <p className="text-center">• {DataDrawings[7].titolo} •</p>
                   </div>
                 </motion.div>
 
@@ -590,9 +581,11 @@ const Homepage = () => {
                   }}
                 >
                   <div>
-                    <h3 className="p-5 border border-solid">Card 1</h3>
-
-                    <p className="text-center">• Titolo •</p>
+                    <img
+                      src={DataDrawings[8].img}
+                      alt={DataDrawings[8].titolo}
+                    />
+                    <p className="text-center">• {DataDrawings[8].titolo} •</p>
                   </div>
                 </motion.div>
               </div>
@@ -605,94 +598,3 @@ const Homepage = () => {
 };
 
 export default Homepage;
-
-/* 
-
- {/
- <Row className="sect-intro mt-5 mb-5">
- <Col className="sect-title2" xs={12}>
-   <h1>Disegni</h1>
- </Col>
-</Row>
-<Row className="sect-works2 d-flex justify-content-end">
- <Col xs={12}>
-   <div className="d-flex justify-content-between">
-     <div className="drawings-home-container">
-       <h2>tutti i fumetti</h2>
-       <div className="all-drawings">
-         {DataDrawings.map((element, index) => (
-           <div
-             key={index}
-             onClick={() => handleDrawingClick(index)}
-             className="card-drawing"
-           >
-             <img src={element.img} alt={element.titolo} />
-             <h5>{element.titolo}</h5>
-           </div>
-         ))}
-       </div>
-     </div>
-     <div className="drawings-slide-home">
-       <motion.div
-         className="card-home"
-         initial={{ y: -200, opacity: 0 }}
-         animate={{ y: 0, opacity: 1 }}
-         transition={{
-           type: "spring",
-           stiffness: 150,
-           damping: 10,
-         }}
-       >
-         <Swiper
-           className="swiper-home"
-           rewind={true}
-           navigation={true}
-           modules={[Navigation]}
-           onSwiper={(swiper) => setSwiperInstance2(swiper)}
-           onInit={(swiper) => {
-             const nextButton = swiper.navigation.nextEl;
-             const prevButton = swiper.navigation.prevEl;
-
-             // Rimuovi le icone predefinite
-             nextButton.innerHTML = ">";
-             prevButton.innerHTML = "<";
-           }}
-         >
-           {DataDrawings.map((element, index) => (
-             <SwiperSlide
-               key={index}
-               className="slide-1"
-               style={{ backgroundImage: `url(${element.img})` }}
-             >
-               <div className="slide-header">
-                 <div className="title-header">
-                   <h2>{element.titolo}</h2>
-                 </div>
-               </div>
-               <div className="slide-body">
-                 <Button
-                   variant="outline-primary"
-                   onClick={() => navigate(`/comics/${element.id}`)}
-                 >
-                   <img
-                     src={BookIcons}
-                     alt="Book Icon"
-                     className="book-icon"
-                   />
-                   Vedi
-                 </Button>
-               </div>
-               <div className="slide-footer">
-                 <p className="comics-info">
-                   {element.anno} | {element.produzione}
-                 </p>
-               </div>
-             </SwiperSlide>
-           ))}
-         </Swiper>
-       </motion.div>
-     </div>
-   </div>
- </Col>
-</Row>
-*/

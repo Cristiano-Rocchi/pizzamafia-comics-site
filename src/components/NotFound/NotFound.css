@@ -1,0 +1,17 @@
+.not-found-container {
+  color: #e0e0e0;
+  font-family: "AnimeFont", sans-serif;
+  margin-top: 90px;
+  h5 {
+    position: relative;
+    right: 130px;
+    font-size: 1.3em;
+  }
+  button {
+    font-size: 2em;
+    letter-spacing: 7px;
+    padding: 5px 30px;
+    margin-top: 70px;
+    margin-left: 40px;
+  }
+}

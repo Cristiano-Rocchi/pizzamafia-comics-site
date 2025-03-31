@@ -28,6 +28,9 @@
   font-size: 1.3em;
 
   position: relative;
+  .nav-link {
+    color: #e0e0e0;
+  }
 }
 
 .navbar-nav {
@@ -49,7 +52,7 @@
   right: -39px;
   color: #69696948;
 }
-.nav2:hover {
+.nav2:hover .nav-link {
   letter-spacing: 10px;
   background-color: #e0e0e0;
   border: 2px solid black;

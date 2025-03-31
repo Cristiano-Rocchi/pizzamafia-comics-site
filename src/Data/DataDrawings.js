@@ -4,7 +4,10 @@ import Disegno2_1 from "../assets/img/drawings/disegno2.1.jpg";
 import Disegno3 from "../assets/img/drawings/disegno3.jpg";
 import Disegno4 from "../assets/img/drawings/disegno4.png";
 import Disegno5 from "../assets/img/drawings/disegno5.png";
+import Disegno6 from "../assets/img/drawings/graffitilife.jpg";
 import Graffito from "../assets/img/drawings/graffito2.jpg";
+import Quadro1 from "../assets/img/drawings/straight-outta2.jpg";
+import QuadroUSA from "../assets/img/drawings/Italo-Americano.jpg";
 
 const DataDrawings = [
   {
@@ -40,6 +43,35 @@ const DataDrawings = [
     titolo: "A Ticket For Hell",
     img: Disegno5,
     anno: 2018,
+    produzione: "Digitale",
+  },
+
+  {
+    id: "straight-outta-universo",
+    titolo: "Straight Outta Universo",
+    img: Quadro1,
+    anno: 2018,
+    produzione: "Spray su Tela",
+  },
+  {
+    id: "italo-amiricani",
+    titolo: "Italo Americani",
+    img: QuadroUSA,
+    anno: 2022,
+    produzione: "Uniposca su Carta Forno",
+  },
+  {
+    id: "graffiti-life",
+    titolo: "Graffiti Life",
+    img: Disegno6,
+    anno: 2022,
+    produzione: "Uniposca su Carta",
+  },
+  {
+    id: "wor(l)d-error-2",
+    titolo: "Worl(d) Error [Red Edition]",
+    img: Disegno2_1,
+    anno: 2020,
     produzione: "Digitale",
   },
   {

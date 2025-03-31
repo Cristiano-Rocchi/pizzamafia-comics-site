@@ -37,7 +37,7 @@ const Drawings = () => {
 
   return (
     <>
-      <Container className="characters-container">
+      <Container className="drawings-container">
         <Row>
           {/* CARD DETTAGLI */}
           <Col
@@ -66,7 +66,11 @@ const Drawings = () => {
                 <hr />
                 <h3>· Drawing ·</h3>
 
-                <img src={selectedDrawings.img} alt={selectedDrawings.titolo} />
+                <img
+                  onClick={() => openFullscreen(selectedDrawings.img)}
+                  src={selectedDrawings.img}
+                  alt={selectedDrawings.titolo}
+                />
                 <hr />
               </div>
             )}

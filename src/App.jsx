@@ -7,6 +7,7 @@ import Comics from "./components/Comics/Comics";
 import Characters from "./components/Characters/Characters";
 import AllComics from "./components/AllComics/AllComics";
 import Drawings from "./components/Drawings/Drawings";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/comics/:id" element={<Comics />} />
           <Route path="/drawings" element={<Drawings />} />
           <Route path="/characters" element={<Characters />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </>
     </BrowserRouter>
