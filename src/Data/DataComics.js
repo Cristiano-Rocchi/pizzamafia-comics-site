@@ -23,10 +23,10 @@ import vecchioChina from "../assets/img/vecchioCinese/characters/vecchioCinese.p
 import plotTwist from "../assets/img/vecchioCinese/characters/plotTwist.png";
 
 //cCOVER
-import odietamo from "../assets/img/odiEtAmo/odi.et.amo.siteversion2.png";
-import peopleFuckedScroll from "../assets/img/peopleFucked/scorrimento.png";
-import viaggioIntStellar from "../assets/img/viaggioIntStellar/completa.png";
-import vecchioCinese from "../assets/img/vecchioCinese/completo2.png";
+import odietamo from "../assets/img/odiEtAmo/odi.et.amo.siteversion2.webp";
+import peopleFuckedScroll from "../assets/img/peopleFucked/scorrimento.webp";
+import viaggioIntStellar from "../assets/img/viaggioIntStellar/completa.webp";
+import vecchioCinese from "../assets/img/vecchioCinese/completo2.webp";
 
 //CLASSICMODE
 //odietamo

@@ -1,3 +1,7 @@
+:root {
+  --color: rgba(159, 6, 6, 0.997);
+}
+
 *,
 *::before,
 *::after {

@@ -16,7 +16,7 @@
   height: 11vh;
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(25px);
-  border: 3px solid #b80217;
+  border: 3px solid var(--color);
   border-top: none;
   position: relative;
   margin: auto;

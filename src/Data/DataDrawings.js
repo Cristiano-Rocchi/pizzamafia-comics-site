@@ -1,4 +1,4 @@
-import Disegno1 from "../assets/img/drawings/disegno1.jpg";
+import Disegno1 from "../assets/img/drawings/disegno1.webp";
 import Disegno2 from "../assets/img/drawings/disegno 2.png";
 import Disegno2_1 from "../assets/img/drawings/disegno2.1.jpg";
 import Disegno3 from "../assets/img/drawings/disegno3.jpg";
