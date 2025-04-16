@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./HomePage.css";
 import BookIcons from "../../assets/icons/book.png";
 import DataComics from "../../Data/DataComics";
 import DataDrawings from "../../Data/DataDrawings";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import imgPizzamafia from "../../assets/img/bg-home/pizzamafia.png";
 
@@ -23,7 +23,7 @@ const Homepage = () => {
   const [swiperInstance, setSwiperInstance] = useState(null);
   const [activeSection, setActiveSection] = useState("comics");
   const [activeDrawingIndex, setActiveDrawingIndex] = useState(0);
-
+  const [showTooltip, setShowTooltip] = useState(false);
   //FUNZIONI
   const handleComicClick = (index) => {
     if (swiperInstance) {
@@ -33,6 +33,12 @@ const Homepage = () => {
 
   const handleDrawingClick = (index) => {
     setActiveDrawingIndex(index);
+  };
+
+  const handleClickContatti = (e) => {
+    e.preventDefault();
+    setShowTooltip(true);
+    setTimeout(() => setShowTooltip(false), 2000); // nasconde dopo 2 sec
   };
 
   //MODALI CAST E STORYLINE
@@ -210,17 +216,17 @@ const Homepage = () => {
             </Col>
           </Row>
         ) : (
-          <Row className="sect-works d-flex justify-content-end">
+          <Row className="sect-drawings d-flex justify-content-end">
             {/* --------------DRAWINGS------------ */}
             <Col xs={12}>
               <div className="d-flex justify-content-between">
-                <div className="comics-home-container">
+                <div className="drawings-home-container">
                   <h2>tutti i disegni</h2>
-                  <div className="all-comics">
+                  <div className="all-drawings">
                     {DataDrawings.map((element, index) => (
                       <div
                         key={index}
-                        className="card-comic"
+                        className="card-drawing"
                         onClick={() => handleDrawingClick(index)}
                       >
                         <img src={element.img} alt={element.titolo} />
@@ -229,7 +235,7 @@ const Homepage = () => {
                     ))}
                   </div>
                 </div>
-                <div className="comics-slide-home">
+                <div className="drawings-slide-home">
                   <motion.div
                     className="card-home"
                     initial={{ y: -200, opacity: 0 }}
@@ -258,14 +264,21 @@ const Homepage = () => {
                         <SwiperSlide
                           key={index}
                           className="slide-1"
-                          style={{ backgroundImage: `url(${element.img})` }}
+                          style={{
+                            backgroundImage: `url(${element.img}) `,
+                            backgroundSize: "cover",
+                          }}
                         >
                           <div className="slide-header">
                             <div className="title-header">
                               <h2>{element.titolo}</h2>
                             </div>
                           </div>
-                          <div className="slide-body"></div>
+                          <div className="slide-body">
+                            <Button onClick={() => navigate("/drawings")}>
+                              Vedi
+                            </Button>
+                          </div>
                           <div className="slide-footer">
                             <p className="comics-info">
                               {element.anno} | {element.produzione}
@@ -281,6 +294,38 @@ const Homepage = () => {
           </Row>
         )}
       </Container>
+      <footer className="footer">
+        <Container>
+          <Row className="justify-content-between align-items-center">
+            <Col md={4}>
+              <p className="footer-title">Pizzamafia</p>
+              <p className="footer-sub">Fumetti Brutti da sempre</p>
+            </Col>
+            <Col md={4} className="text-center">
+              <p className="footer-links">
+                <Link to="/comics">Fumetti</Link> |{" "}
+                <Link to="/drawings">Disegni</Link> |{" "}
+                <Tippy
+                  content="Non mi contattare."
+                  visible={showTooltip}
+                  placement="top"
+                  animation="shift-away"
+                >
+                  <a href="#contatti" onClick={handleClickContatti}>
+                    Contatti
+                  </a>
+                </Tippy>
+              </p>
+            </Col>
+            <Col md={4} className="text-end">
+              <p className="footer-credit">
+                © {new Date().getFullYear()} Pizzamafia
+              </p>
+              <p className="footer-claim">Niente arte. Solo disagio.</p>
+            </Col>
+          </Row>
+        </Container>
+      </footer>
     </>
   );
 };

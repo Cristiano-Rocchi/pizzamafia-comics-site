@@ -309,28 +309,95 @@
 /*-----DRAWINGS-----*/
 
 .sect-drawings {
-  /* FILA 1 */
-  .container-card-drawing-1 {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
+  .all-drawings {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-height: 350px;
+    overflow-y: auto;
+    scrollbar-width: thin; /* Per Firefox */
+    scrollbar-color: var(--color) rgba(12, 12, 12, 0.8);
+    padding: 10px;
+    background: rgba(12, 12, 12, 0.8);
+    backdrop-filter: blur(25px);
+    border-radius: 10px;
   }
-
-  /* FILA 2 */
-  .container-card-drawing-2 {
-    display: flex;
-    justify-content: center;
-    gap: 600px;
+  .all-drawings img {
+    width: 150px;
   }
-
-  /* FILA 3 */
-  .container-card-drawing-3 {
-    display: flex;
-    justify-content: center;
-    gap: 250px;
+  .card-drawing {
+    padding: 10px;
+    border: 2px solid var(--color);
+    transition: background-color 2s ease;
+    background: rgba(12, 12, 12, 0.8);
+    backdrop-filter: blur(25px);
+    border-radius: 10px;
+  }
+  .card-drawing:hover {
+    transform: scale(1.2);
+    background-color: var(--color);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    z-index: 9;
+    border-color: black;
+  }
+  .card-home {
+    width: 750px;
+    height: 400px;
+    border-radius: 7px;
+    box-shadow: 44px 50px 50px 50px rgba(17, 17, 17, 0.51);
   }
 }
 
-.card-drawing img {
-  width: 220px;
+/*-------------------------FOOTER-------------------------*/
+
+.footer {
+  margin-top: 2em;
+  color: #eee;
+  padding: 40px 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(25px);
+  font-family: "AnimeFont", sans-serif;
+
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.footer-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--color);
+  background-color: rgba(0, 0, 0, 0.6);
+  display: inline;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.footer-sub {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.footer-links a {
+  color: #eee;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.footer-links a:hover {
+  color: #ff0055;
+  text-decoration: underline;
+}
+
+.footer-credit {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.footer-claim {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #bbb;
 }

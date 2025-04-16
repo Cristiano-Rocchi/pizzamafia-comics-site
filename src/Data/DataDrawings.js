@@ -11,20 +11,6 @@ import QuadroUSA from "../assets/img/drawings/Italo-Americano.jpg";
 
 const DataDrawings = [
   {
-    id: "one-more-anarchist",
-    titolo: "one more anarchist",
-    img: Disegno1,
-    anno: 2018,
-    produzione: "Uniposca su Carta",
-  },
-  {
-    id: "wor(l)d-error",
-    titolo: "Worl(d) Error",
-    img: Disegno2,
-    anno: 2020,
-    produzione: "Digitale",
-  },
-  {
     id: "buon-appetito",
     titolo: "Buon Appetito",
     img: Disegno3,
@@ -79,6 +65,20 @@ const DataDrawings = [
     titolo: "Graffito",
     img: Graffito,
     anno: 2019,
+    produzione: "Digitale",
+  },
+  {
+    id: "one-more-anarchist",
+    titolo: "one more anarchist",
+    img: Disegno1,
+    anno: 2018,
+    produzione: "Uniposca su Carta",
+  },
+  {
+    id: "wor(l)d-error",
+    titolo: "Worl(d) Error",
+    img: Disegno2,
+    anno: 2020,
     produzione: "Digitale",
   },
 ];
