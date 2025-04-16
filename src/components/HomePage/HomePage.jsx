@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./HomePage.css";
 import BookIcons from "../../assets/icons/book.png";
@@ -22,12 +22,17 @@ const Homepage = () => {
   const navigate = useNavigate();
   const [swiperInstance, setSwiperInstance] = useState(null);
   const [activeSection, setActiveSection] = useState("comics");
+  const [activeDrawingIndex, setActiveDrawingIndex] = useState(0);
 
   //FUNZIONI
   const handleComicClick = (index) => {
     if (swiperInstance) {
       swiperInstance.slideTo(index);
     }
+  };
+
+  const handleDrawingClick = (index) => {
+    setActiveDrawingIndex(index);
   };
 
   //MODALI CAST E STORYLINE
@@ -55,8 +60,6 @@ const Homepage = () => {
   };
   return (
     <>
-      {/* --------------COMICS------------ */}
-
       <Container className="home-container">
         <Row className="sect-intro">
           <Col xs={4}>
@@ -207,387 +210,72 @@ const Homepage = () => {
             </Col>
           </Row>
         ) : (
-          <Row className="sect-drawings">
+          <Row className="sect-works d-flex justify-content-end">
             {/* --------------DRAWINGS------------ */}
-
-            <h2 className="text-center">drawing</h2>
             <Col xs={12}>
-              {/* FILA 1 */}
-              <div className="container-card-drawing-1 mb-2">
-                <motion.div
-                  className="card-drawing d-flex"
-                  style={{ position: "relative", bottom: "20px" }}
-                  initial={{
-                    x: "100vw",
-                    y: -100,
-                    opacity: 0,
-                    rotate: 15,
-                  }}
-                  animate={{
-                    x: 0,
-                    y: 0,
-                    opacity: 1,
-                    rotate: 0,
-                  }}
-                  transition={{
-                    x: {
-                      type: "spring",
-                      stiffness: 30, // Rigidità
-                      damping: 10, //  Smorzamento
-                      mass: 4, // Massa
-                    },
-                    y: {
-                      type: "keyframes",
-                      values: [-100, 50, -20, 10, 0],
-                      times: [0, 0.3, 0.6, 0.8, 1],
-                      duration: 3,
-                    },
-                    rotate: {
-                      type: "keyframes",
-                      values: [15, -10, 5, -2, 0],
-                      duration: 3,
-                    },
-                    opacity: {
-                      duration: 2,
-                    },
-                  }}
-                >
-                  <div>
-                    <img
-                      src={DataDrawings[0].img}
-                      alt={DataDrawings[0].titolo}
-                    />
-                    <p className="text-center">• {DataDrawings[0].titolo} •</p>
+              <div className="d-flex justify-content-between">
+                <div className="comics-home-container">
+                  <h2>tutti i disegni</h2>
+                  <div className="all-comics">
+                    {DataDrawings.map((element, index) => (
+                      <div
+                        key={index}
+                        className="card-comic"
+                        onClick={() => handleDrawingClick(index)}
+                      >
+                        <img src={element.img} alt={element.titolo} />
+                        <h5>{element.titolo}</h5>
+                      </div>
+                    ))}
                   </div>
-                </motion.div>
-                <motion.div
-                  className="card-drawing d-flex"
-                  style={{ position: "relative", top: "50px", left: "50px" }}
-                  initial={{
-                    y: "100vh",
-                    x: 0,
-                    opacity: 0,
-                    rotate: 10,
-                  }}
-                  animate={{
-                    y: 0,
-                    x: 0,
-                    opacity: 1,
-                    rotate: 0,
-                  }}
-                  transition={{
-                    y: {
-                      type: "spring",
-                      stiffness: 30,
-                      damping: 8,
-                      mass: 2,
-                      bounce: 0.6,
-                      delay: 1.5,
-                    },
-                    x: {
-                      type: "keyframes",
-                      values: [0, 15, -10, 5, 0],
-                      times: [0, 0.3, 0.6, 0.8, 1],
-                      duration: 2,
-                      delay: 1.5,
-                    },
-                    rotate: {
-                      type: "spring",
-                      stiffness: 50,
-                      damping: 15,
-                      mass: 1,
-                      delay: 1.5,
-                    },
-                    opacity: {
-                      duration: 1.5,
-                      delay: 1.5,
-                    },
-                  }}
-                >
-                  <div>
-                    <img
-                      src={DataDrawings[1].img}
-                      alt={DataDrawings[1].titolo}
-                    />
-                    <p className="text-center">• {DataDrawings[1].titolo} •</p>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  className="card-drawing d-flex"
-                  style={{
-                    position: "relative",
-                    top: "70px",
-                    left: "30px",
-                    transformStyle: "preserve-3d",
-                    backfaceVisibility: "hidden",
-                    perspective: 1000,
-                  }}
-                  initial={{
-                    rotateY: 200,
-                    opacity: 0,
-                    scale: 0.8,
-                  }}
-                  animate={{
-                    rotateY: 0,
-                    opacity: 1,
-                    scale: 1,
-                  }}
-                  transition={{
-                    rotateY: {
-                      type: "tween",
-                      ease: "easeOut",
-                      duration: 1.2,
-                      delay: 3,
-                    },
-                    opacity: {
-                      duration: 0.8,
-                      ease: "easeOut",
-                      delay: 2,
-                    },
-                    scale: {
+                </div>
+                <div className="comics-slide-home">
+                  <motion.div
+                    className="card-home"
+                    initial={{ y: -200, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{
                       type: "spring",
                       stiffness: 150,
                       damping: 10,
-                      delay: 2.2,
-                    },
-                  }}
-                >
-                  <motion.div
-                    style={{
-                      transformOrigin: "center",
-                      backfaceVisibility: "hidden",
                     }}
                   >
-                    <div>
-                      <img
-                        src={DataDrawings[2].img}
-                        alt={DataDrawings[2].titolo}
-                      />
-                      <p className="text-center">
-                        • {DataDrawings[2].titolo} •
-                      </p>
-                    </div>
+                    <Swiper
+                      key={activeDrawingIndex}
+                      className="swiper-home"
+                      navigation={true}
+                      modules={[Navigation]}
+                      allowTouchMove={false}
+                      initialSlide={activeDrawingIndex}
+                      onInit={(swiper) => {
+                        const nextButton = swiper.navigation.nextEl;
+                        const prevButton = swiper.navigation.prevEl;
+                        nextButton.innerHTML = ">";
+                        prevButton.innerHTML = "<";
+                      }}
+                    >
+                      {DataDrawings.map((element, index) => (
+                        <SwiperSlide
+                          key={index}
+                          className="slide-1"
+                          style={{ backgroundImage: `url(${element.img})` }}
+                        >
+                          <div className="slide-header">
+                            <div className="title-header">
+                              <h2>{element.titolo}</h2>
+                            </div>
+                          </div>
+                          <div className="slide-body"></div>
+                          <div className="slide-footer">
+                            <p className="comics-info">
+                              {element.anno} | {element.produzione}
+                            </p>
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
                   </motion.div>
-                </motion.div>
-              </div>
-
-              {/* FILA 2 */}
-              <div className="container-card-drawing-2 mb-5">
-                <motion.div
-                  className="card-drawing d-flex"
-                  initial={{
-                    x: "100vw",
-                    y: "100vh",
-                    opacity: 0,
-                    rotate: -15,
-                  }}
-                  animate={{
-                    x: 0,
-                    y: 0,
-                    opacity: 1,
-                    rotate: 0,
-                  }}
-                  transition={{
-                    x: {
-                      type: "spring",
-                      stiffness: 20,
-                      damping: 8,
-                      mass: 5,
-                    },
-                    y: {
-                      type: "keyframes",
-                      values: [200, -100, 50, -20, 10, 0],
-                      times: [0, 0.2, 0.4, 0.6, 0.8, 1],
-                      duration: 3,
-                    },
-                    rotate: {
-                      type: "keyframes",
-                      values: [-15, 10, -5, 3, -1, 0],
-                      duration: 3,
-                    },
-                    opacity: {
-                      duration: 2,
-                    },
-                  }}
-                >
-                  <div>
-                    <img
-                      src={DataDrawings[4].img}
-                      alt={DataDrawings[4].titolo}
-                    />
-                    <p className="text-center">• {DataDrawings[4].titolo} •</p>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  className="card-drawing d-flex"
-                  style={{ position: "relative", top: "20px", right: "150px" }}
-                  initial={{
-                    x: 0,
-                    y: "100vh",
-                    opacity: 0,
-                    rotate: 15,
-                  }}
-                  animate={{
-                    x: 0,
-                    y: 0,
-                    opacity: 1,
-                    rotate: 0,
-                  }}
-                  transition={{
-                    y: {
-                      type: "spring",
-                      stiffness: 30,
-                      damping: 10,
-                      mass: 4,
-                      bounce: 0.6,
-                    },
-                    x: {
-                      type: "keyframes",
-                      values: [0, 20, -15, 10, 0],
-                      times: [0, 0.3, 0.6, 0.8, 1],
-                      duration: 3,
-                    },
-                    rotate: {
-                      type: "keyframes",
-                      values: [15, -10, 5, -2, 0],
-                      duration: 3,
-                    },
-                    opacity: {
-                      duration: 2,
-                    },
-                  }}
-                >
-                  <div>
-                    <img
-                      src={DataDrawings[5].img}
-                      alt={DataDrawings[5].titolo}
-                    />
-                    <p className="text-center">• {DataDrawings[5].titolo} •</p>
-                  </div>
-                </motion.div>
-              </div>
-              {/* FILA 3 */}
-              <div className="container-card-drawing-3 mb-5">
-                <motion.div
-                  className="card-drawing d-flex"
-                  style={{ position: "relative", right: "100px" }}
-                  initial={{ y: -200, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 150,
-                    damping: 10,
-                  }}
-                >
-                  <div>
-                    <img
-                      src={DataDrawings[6].img}
-                      alt={DataDrawings[6].titolo}
-                    />
-                    <p className="text-center">• {DataDrawings[6].titolo} •</p>
-                  </div>
-                </motion.div>
-                <motion.div
-                  className="card-drawing d-flex"
-                  style={{
-                    position: "relative",
-                    bottom: "30px",
-                    right: "80px",
-                  }}
-                  initial={{
-                    x: "-100vw",
-                    y: "100vh",
-                    opacity: 0,
-                    rotate: -15,
-                  }}
-                  animate={{
-                    x: 0,
-                    y: 0,
-                    opacity: 1,
-                    rotate: 0,
-                  }}
-                  transition={{
-                    x: {
-                      type: "spring",
-                      stiffness: 30,
-                      damping: 10,
-                      mass: 4,
-                      delay: 0.5,
-                    },
-                    y: {
-                      type: "keyframes",
-                      values: [100, -30, 15, -5, 0],
-                      times: [0, 0.3, 0.6, 0.8, 1],
-                      duration: 3,
-                      delay: 0.5,
-                    },
-                    rotate: {
-                      type: "keyframes",
-                      values: [-15, 10, -5, 2, 0],
-                      duration: 3,
-                      delay: 0.5,
-                    },
-                    opacity: {
-                      duration: 2,
-                      delay: 0.5,
-                    },
-                  }}
-                >
-                  <div>
-                    <img
-                      src={DataDrawings[7].img}
-                      alt={DataDrawings[7].titolo}
-                    />
-                    <p className="text-center">• {DataDrawings[7].titolo} •</p>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  className="card-drawing d-flex "
-                  style={{ position: "relative", top: "20px", left: "50px" }}
-                  initial={{
-                    x: "100vw",
-                    y: "100vh",
-                    opacity: 0,
-                    rotate: 30,
-                  }}
-                  animate={{
-                    x: ["100vw", "50vw", "-20vw", "0"],
-                    y: ["100vh", "-20vh", "10vh", "0"],
-                    opacity: 1,
-                    rotate: [30, -10, 5, 0],
-                  }}
-                  transition={{
-                    x: {
-                      type: "keyframes",
-                      duration: 4,
-                      ease: "easeInOut",
-                    },
-                    y: {
-                      type: "keyframes",
-                      duration: 4,
-                      ease: "easeInOut",
-                    },
-                    rotate: {
-                      type: "keyframes",
-                      duration: 4,
-                      ease: "easeInOut",
-                    },
-                    opacity: {
-                      duration: 2,
-                    },
-                  }}
-                >
-                  <div>
-                    <img
-                      src={DataDrawings[8].img}
-                      alt={DataDrawings[8].titolo}
-                    />
-                    <p className="text-center">• {DataDrawings[8].titolo} •</p>
-                  </div>
-                </motion.div>
+                </div>
               </div>
             </Col>
           </Row>
