@@ -10,10 +10,14 @@
   padding: 0;
 }
 /*SFONDO*/
+/* SFONDO GLOBALE */
 #root {
   background-image: url("../src/assets/img/bg-home/bg-home.png");
   background-size: cover;
   background-position: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /*sfondo solo in /comics/:id */

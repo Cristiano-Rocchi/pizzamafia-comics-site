@@ -139,3 +139,34 @@
     }
   }
 }
+
+/*---------MEDIA QUERY PER MOBILE---------*/
+@media screen and (max-width: 768px) {
+  .details-panel {
+    display: none !important;
+  }
+
+  .card-comics-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-comics {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column !important;
+    width: 90vw !important;
+    height: 60vh;
+    text-align: center;
+  }
+
+  .card-comics img {
+    width: 100% !important;
+    height: 100%;
+  }
+
+  .title-comics div {
+    transform: translateX(180px);
+  }
+}

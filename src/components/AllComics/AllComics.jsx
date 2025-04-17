@@ -19,10 +19,16 @@ const AllComics = () => {
 
   // FUNZIONI
   const handleComicsClick = (comic) => {
-    setSelectedComics(comic);
-    setShowDetails(true);
-    setComicTitle(comic.titolo);
-    setComicId(comic.id);
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile) {
+      navigate(`/comics/${comic.id}`);
+    } else {
+      setSelectedComics(comic);
+      setShowDetails(true);
+      setComicTitle(comic.titolo);
+      setComicId(comic.id);
+    }
   };
 
   return (
@@ -89,8 +95,11 @@ const AllComics = () => {
            */}
           <Col className="mt-5" xs={6}>
             <div className="title-comics">
-              <h1>· Tutti i Fumetti ·</h1>
-              <img src={hunderline} alt="" />
+              <div>
+                {" "}
+                <h1>· Tutti i Fumetti ·</h1>
+                <img src={hunderline} alt="" />
+              </div>
             </div>
             <div className="card-comics-container">
               {DataComics.map((comic) => (
