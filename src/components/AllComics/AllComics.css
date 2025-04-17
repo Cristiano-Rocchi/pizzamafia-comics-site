@@ -50,8 +50,6 @@
     z-index: 9;
     border-color: black;
   }
-  .card-comics:hover img {
-  }
 }
 .card-comics:hover .comic-year {
   transform: translateY(0);
@@ -63,6 +61,10 @@
   color: #e0e0e0;
   padding: 20px;
   text-align: center;
+  max-height: 700px;
+  overflow-y: auto;
+  scrollbar-width: thin; /* Per Firefox */
+  scrollbar-color: var(--color) rgba(12, 12, 12, 0.8);
 
   img {
     max-width: 300px;
@@ -101,8 +103,16 @@
 
   button {
     color: #e0e0e0;
+    font-size: 2em;
     border-color: black;
     letter-spacing: 10px;
+    background-color: var(--color);
+    padding-inline: 20px;
+  }
+  button:hover {
+    color: black;
+    background-color: red;
+    border-color: black;
   }
 
   .cast-grid {
@@ -125,7 +135,7 @@
       background-color: #b1b1b1;
     }
     .cast-member:hover {
-      transform: scale(1.4);
+      transform: scale(1.15);
     }
   }
 }

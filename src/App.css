@@ -13,6 +13,13 @@
 #root {
   background-image: url("../src/assets/img/bg-home/bg-home.png");
   background-size: cover;
+  background-position: center;
+}
+
+/*sfondo solo in /comics/:id */
+#root.dark-root {
+  background-image: none;
+  background: rgb(26, 25, 25);
 }
 
 /*-----FONT-----*/

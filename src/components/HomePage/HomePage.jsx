@@ -306,7 +306,7 @@ const Homepage = () => {
                 <Link to="/comics">Fumetti</Link> |{" "}
                 <Link to="/drawings">Disegni</Link> |{" "}
                 <Tippy
-                  content="Non mi contattare."
+                  content=" 😡 Non mi contattare."
                   visible={showTooltip}
                   placement="top"
                   animation="shift-away"

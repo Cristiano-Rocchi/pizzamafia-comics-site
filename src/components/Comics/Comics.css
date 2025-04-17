@@ -32,23 +32,40 @@
   height: 80px;
 }
 
-.comics-extra button {
-  background: none;
-  color: #e0e0e0;
-  font-family: "AnimeFont", sans-serif;
-  border-radius: 3px;
-  border: 2px solid #e0e0e0;
-  transform: rotate(-6deg);
-  letter-spacing: 0.2em;
-  padding-inline: 20px;
+.comics-extra {
+  text-align: center;
+
+  button {
+    letter-spacing: 3px;
+  }
+}
+
+.button-sect {
   display: flex;
+  justify-content: center;
+  gap: 50px;
   margin-block: 20px;
+
+  button {
+    background: none;
+    color: #e0e0e0;
+    font-family: "AnimeFont", sans-serif;
+    border-radius: 3px;
+    border: 2px solid #e0e0e0;
+    transform: rotate(-3deg);
+    letter-spacing: 0.2em;
+    padding-inline: 20px;
+    display: flex;
+    margin-block: 20px;
+    font-size: 1.5em;
+  }
+  button.active {
+    background-color: #cfcfcf;
+    color: black;
+    border-color: black;
+  }
 }
-.comics-extra button.active {
-  background-color: #cfcfcf;
-  color: black;
-  border-color: black;
-}
+
 /*----SCORRIMENTO MODE------*/
 .comics-body {
   background: rgba(12, 12, 12, 0.8);
@@ -103,6 +120,11 @@
   font-size: 1.2em;
   text-align: end;
   margin-right: 20px;
+  button {
+    border-color: #e0e0e0;
+    letter-spacing: 3px;
+    padding-inline: 10px;
+  }
 }
 .comics-classic-body .header-classic:hover {
   cursor: pointer;

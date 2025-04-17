@@ -144,20 +144,24 @@ const Comics = () => {
             }}
           >
             <h3 className="text-center">Extra</h3>
-            <button
-              className={mode === "classic" ? "active" : ""}
-              onClick={() => handleModeChange("classic")}
-            >
-              Leggi in modalità classica
-            </button>
-            <button
-              className={mode === "scorrimento" ? "active" : ""}
-              onClick={() => handleModeChange("scorrimento")}
-            >
-              Leggi in modalità scorrimento
-            </button>
+            <button>Download</button>
           </motion.div>
         </div>
+      </div>
+      <div className="button-sect">
+        {" "}
+        <button
+          className={mode === "classic" ? "active" : ""}
+          onClick={() => handleModeChange("classic")}
+        >
+          Leggi in modalità classica
+        </button>
+        <button
+          className={mode === "scorrimento" ? "active" : ""}
+          onClick={() => handleModeChange("scorrimento")}
+        >
+          Leggi in modalità scorrimento
+        </button>
       </div>
 
       <div ref={scrollRef}>
@@ -182,12 +186,15 @@ const Comics = () => {
             >
               <div className="header-scorrimento d-flex justify-content-between sticky-top">
                 <div className="d-flex ms-3 pt-2" onClick={toggleFullscreen}>
-                  <img
-                    src={isFullscreen ? exitfs : fullscreen}
-                    alt={isFullscreen ? "Esci da fullscreen" : "Fullscreen"}
-                    className="fullscreen-icon"
-                  />
-                  {isFullscreen ? " Esci da fullscreen" : " Fullscreen"}
+                  <button>
+                    {" "}
+                    <img
+                      src={isFullscreen ? exitfs : fullscreen}
+                      alt={isFullscreen ? "Esci da fullscreen" : "Fullscreen"}
+                      className="fullscreen-icon"
+                    />
+                    {isFullscreen ? " Esci da fullscreen" : " Fullscreen"}
+                  </button>
                 </div>
                 <div
                   className="d-flex me-3 pt-2"
@@ -204,8 +211,10 @@ const Comics = () => {
                     }
                   }}
                 >
-                  <img className="up-icon" src={up} alt="" />
-                  torna all'inizio
+                  <button>
+                    <img className="up-icon" src={up} alt="" />
+                    torna all'inizio
+                  </button>
                 </div>
               </div>
 
@@ -229,12 +238,15 @@ const Comics = () => {
           >
             <Container className="comics-classic-body d-block" ref={swiperRef}>
               <div className="header-classic" onClick={toggleFullscreen}>
-                <img
-                  src={isFullscreen ? exitfs : fullscreen}
-                  alt={isFullscreen ? "Esci da fullscreen" : "Fullscreen"}
-                  className="fullscreen-icon"
-                />
-                {isFullscreen ? " Esci da fullscreen" : " Fullscreen"}
+                <button>
+                  {" "}
+                  <img
+                    src={isFullscreen ? exitfs : fullscreen}
+                    alt={isFullscreen ? "Esci da fullscreen" : "Fullscreen"}
+                    className="fullscreen-icon"
+                  />
+                  {isFullscreen ? " Esci da fullscreen" : " Fullscreen"}
+                </button>
               </div>
               <Swiper
                 className="swiper-comics-classic"
