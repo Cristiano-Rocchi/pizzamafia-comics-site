@@ -19,7 +19,7 @@
 /*CARD TUTTI I FUMETTI*/
 .card-comics-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 10px;
 
   .card-comics {
@@ -141,22 +141,18 @@
 }
 
 /*---------MEDIA QUERY PER MOBILE---------*/
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .details-panel {
     display: none !important;
   }
 
   .card-comics-container {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .card-comics {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column !important;
-    width: 90vw !important;
+    flex-direction: column;
+    width: 90vw;
     height: 60vh;
     text-align: center;
   }
@@ -169,5 +165,34 @@
   .title-comics div {
     position: relative;
     left: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .card-comics-container {
+    margin-left: 20px;
+  }
+  .card-comics img {
+    height: 70%;
+  }
+}
+
+@media (min-width: 630px) and (max-width: 768px) {
+  .card-comics {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .cast-grid {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .card-comics-details img {
+    max-width: 80%;
+  }
+}
+@media (min-width: 1500px) {
+  .card-comics-container {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
