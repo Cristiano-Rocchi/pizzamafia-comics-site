@@ -11,7 +11,7 @@ import up from "../../assets/icons/graffitiarrowsvg.svg";
 //librerie
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Navigation } from "swiper/modules";
+import { Navigation, Zoom } from "swiper/modules";
 import { EffectCreative } from "swiper/modules";
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
@@ -294,7 +294,8 @@ const Comics = () => {
                 className="swiper-comics-classic"
                 rewind={true}
                 navigation={true}
-                modules={[Navigation, EffectCreative]}
+                modules={[Navigation, Zoom]}
+                zoom={true}
                 effect={"creative"}
                 creativeEffect={{
                   prev: {
@@ -308,11 +309,14 @@ const Comics = () => {
               >
                 {comic.classicMode.map((foto, index) => (
                   <SwiperSlide className="slide-classic" key={index}>
-                    <img
-                      src={foto.img}
-                      alt={`comic-${index}`}
-                      className="comic-image"
-                    />
+                    <div className="swiper-zoom-container">
+                      {" "}
+                      <img
+                        src={foto.img}
+                        alt={`comic-${index}`}
+                        className="comic-image"
+                      />
+                    </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
