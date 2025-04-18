@@ -395,3 +395,10 @@
   font-size: 0.85rem;
   color: #bbb;
 }
+
+@media (max-width: 768px) {
+  .sect-works,
+  .sect-drawings {
+    display: none !important;
+  }
+}

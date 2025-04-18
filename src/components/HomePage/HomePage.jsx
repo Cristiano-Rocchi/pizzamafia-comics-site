@@ -97,17 +97,31 @@ const Homepage = () => {
         <Col className="sect-title" xs={12}>
           <div className="line-home1"></div>
           <h1
-            onClick={() => setActiveSection("comics")}
+            onClick={() => {
+              if (window.innerWidth <= 768) {
+                navigate("/comics");
+              } else {
+                setActiveSection("comics");
+              }
+            }}
             className={activeSection === "comics" ? "active" : ""}
           >
             Sfoglia i Fumetti
           </h1>
+
           <h1
-            onClick={() => setActiveSection("drawings")}
+            onClick={() => {
+              if (window.innerWidth <= 768) {
+                navigate("/drawings");
+              } else {
+                setActiveSection("drawings");
+              }
+            }}
             className={activeSection === "drawings" ? "active" : ""}
           >
             Sfoglia i Disegni
           </h1>
+
           <div className="line-home2"></div>
         </Col>
         {/* --------------COMICS------------ */}
