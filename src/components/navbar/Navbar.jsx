@@ -1,18 +1,15 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import DataDrawings from "../../Data/DataDrawings";
-import DataComics from "../../Data/DataComics";
-//librerie
-import Tippy from "@tippyjs/react";
-import "tippy.js/dist/tippy.css";
-import { motion } from "framer-motion";
-import "../navbar/Navbar.css";
+import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
+import "../navbar/Navbar.css";
 
 const MyNavbar = () => {
-  //---------STATI-------
+  const [showOffcanvas, setShowOffcanvas] = useState(false);
+
+  const handleClose = () => setShowOffcanvas(false);
+  const handleShow = () => setShowOffcanvas(true);
 
   return (
     <>
@@ -24,38 +21,57 @@ const MyNavbar = () => {
             </Nav.Link>
           </h3>
         </div>
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav className="nav2">
-              <Nav.Link as={Link} to="/">
-                Home
-              </Nav.Link>
-            </Nav>
-            <Nav className="nav2">
-              <Nav.Link as={Link} to="/comics">
-                FUMETTI
-              </Nav.Link>
-            </Nav>
-            <Nav className="nav2">
-              <Nav.Link as={Link} to="/characters">
-                PERSONAGGI
-              </Nav.Link>
-            </Nav>
-            <Nav className="nav2">
-              <Nav.Link as={Link} to="/drawings">
-                DISEGNI
-              </Nav.Link>
-            </Nav>
 
-            <Nav className="nav2">
-              <Nav.Link as={Link} to="/">
-                DOWNLOAD
-              </Nav.Link>
+        {/* Toggle per mobile */}
+        <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={handleShow} />
+
+        {/* Offcanvas laterale */}
+        <Navbar.Offcanvas
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+          placement="end"
+          className="offcanvas"
+          show={showOffcanvas}
+          onHide={handleClose}
+        >
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title id="offcanvasNavbarLabel">
+              PIZZAMAFIA COMICS
+            </Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <Nav className="navbar-nav me-auto">
+              <Nav className="nav2">
+                <Nav.Link as={Link} to="/" onClick={handleClose}>
+                  Home
+                </Nav.Link>
+              </Nav>
+              <Nav className="nav2">
+                <Nav.Link as={Link} to="/comics" onClick={handleClose}>
+                  FUMETTI
+                </Nav.Link>
+              </Nav>
+              <Nav className="nav2">
+                <Nav.Link as={Link} to="/characters" onClick={handleClose}>
+                  PERSONAGGI
+                </Nav.Link>
+              </Nav>
+              <Nav className="nav2">
+                <Nav.Link as={Link} to="/drawings" onClick={handleClose}>
+                  DISEGNI
+                </Nav.Link>
+              </Nav>
+              <Nav className="nav2">
+                <Nav.Link as={Link} to="/download" onClick={handleClose}>
+                  DOWNLOAD
+                </Nav.Link>
+              </Nav>
             </Nav>
-          </Nav>
-        </Navbar.Collapse>{" "}
+          </Offcanvas.Body>
+        </Navbar.Offcanvas>
       </Navbar>
     </>
   );
 };
+
 export default MyNavbar;

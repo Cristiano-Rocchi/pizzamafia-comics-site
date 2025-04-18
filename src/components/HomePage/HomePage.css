@@ -397,10 +397,6 @@
 }
 
 @media (max-width: 768px) {
-  .sect-works,
-  .sect-drawings {
-    display: none !important;
-  }
   .sect-intro img {
     display: none;
   }
@@ -413,7 +409,6 @@
     left: 10%;
   }
   .sect-title {
-    margin-top: 90px !important;
     flex-direction: column;
     gap: 20px !important;
     align-items: center;
@@ -421,14 +416,8 @@
   .sect-title h1 {
     font-size: 2em !important;
     transform: none !important;
-    width: 90%;
+
     height: 50px;
-    background-color: #e0e0e0;
-    box-shadow: 0px 0px 30px 0px rgba(224, 224, 224, 0.92);
-    color: black !important;
-    border: 1px solid black;
-    text-align: center;
-    letter-spacing: 4px;
   }
   .sect-title div {
     display: none;
@@ -459,5 +448,41 @@
 @media (max-width: 480px) {
   .sect-intro p {
     min-width: 300px;
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .sect-intro p {
+    min-width: 600px;
+  }
+  .sect-intro {
+    margin-left: 40px;
+  }
+}
+@media (min-width: 993px) and (max-width: 1300px) {
+  .sect-intro {
+    margin-left: 70px;
+  }
+  .sect-title h1 {
+    font-size: 2.5em !important;
+  }
+}
+@media (max-width: 1300px) {
+  .sect-works,
+  .sect-drawings {
+    display: none !important;
+  }
+
+  .sect-title h1 {
+    width: 90%;
+
+    background-color: #e0e0e0;
+    box-shadow: 0px 0px 30px 0px rgba(224, 224, 224, 0.92);
+    color: black !important;
+    border: 1px solid black;
+    text-align: center;
+    letter-spacing: 4px;
+  }
+  .sect-title {
+    margin-top: 90px !important;
   }
 }

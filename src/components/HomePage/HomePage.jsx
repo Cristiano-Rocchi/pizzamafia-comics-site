@@ -98,7 +98,7 @@ const Homepage = () => {
           <div className="line-home1"></div>
           <h1
             onClick={() => {
-              if (window.innerWidth <= 768) {
+              if (window.innerWidth <= 1300) {
                 navigate("/comics");
               } else {
                 setActiveSection("comics");
@@ -111,7 +111,7 @@ const Homepage = () => {
 
           <h1
             onClick={() => {
-              if (window.innerWidth <= 768) {
+              if (window.innerWidth <= 1300) {
                 navigate("/drawings");
               } else {
                 setActiveSection("drawings");
