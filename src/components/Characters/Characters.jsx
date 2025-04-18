@@ -12,15 +12,27 @@ const Characters = () => {
   const [showDetails, setShowDetails] = useState(false);
   const [comicTitle, setComicTitle] = useState("");
   const [comicId, setComicId] = useState("");
+  const [activeMobileCharacter, setActiveMobileCharacter] = useState(null);
 
   const navigate = useNavigate();
 
   // FUNZIONI
   const handleCharacterClick = (character, comic) => {
-    setSelectedCharacter(character);
-    setShowDetails(true);
-    setComicTitle(comic.titolo);
-    setComicId(comic.id);
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile) {
+      if (activeMobileCharacter === character.nome) {
+        setActiveMobileCharacter(null); // chiudi se già attivo
+      } else {
+        setActiveMobileCharacter(character.nome);
+        setComicTitle(comic.titolo);
+      }
+    } else {
+      setSelectedCharacter(character);
+      setShowDetails(true);
+      setComicTitle(comic.titolo);
+      setComicId(comic.id);
+    }
   };
 
   const goToComicPage = () => {
@@ -68,6 +80,16 @@ const Characters = () => {
                 >
                   <img src={element.foto} alt={element.nome} />
                   <h4>{element.nome}</h4>
+                  {/* MOSTRA I DETTAGLI SOLO SU MOBILE E SOLO SE ATTIVO */}
+                  {activeMobileCharacter === element.nome &&
+                    window.innerWidth <= 768 && (
+                      <div className="mobile-character-details mt-2 text-center">
+                        <p>"{element.descrizione}"</p>
+                        <p>
+                          <strong>Fumetto:</strong> {comic.titolo}
+                        </p>
+                      </div>
+                    )}
                 </div>
               ))
             )}
