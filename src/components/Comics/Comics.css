@@ -114,19 +114,21 @@
   padding-top: 20px !important;
   color: #e0e0e0;
   font-family: "AnimeFont", sans-serif;
+  margin-bottom: 20px;
 }
 
 .comics-classic-body .header-classic {
   font-size: 1.2em;
   text-align: end;
   margin-right: 20px;
+  margin-bottom: 15px;
   button {
     border-color: #e0e0e0;
     letter-spacing: 3px;
     padding-inline: 10px;
   }
 }
-.comics-classic-body .header-classic:hover {
+.comics-classic-body .header-classic button:hover {
   cursor: pointer;
 }
 
@@ -155,4 +157,56 @@
 .up-icon {
   width: 24px;
   transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+  .comics-header h1 {
+    font-size: 2em;
+  }
+  .comics-header .header-info {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .card-info {
+    width: 100% !important;
+    cursor: pointer;
+  }
+
+  .comics-characters img {
+    width: 50px;
+    height: 60px;
+    object-fit: cover;
+  }
+
+  .comics-characters p {
+    display: none;
+  }
+
+  .character-list {
+    margin-top: 10px;
+  }
+
+  .character-list div.d-flex {
+    padding: 5px 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .button-sect button {
+    transform: unset;
+  }
+
+  .fumetto {
+    margin-top: 10px;
+    width: 80vh !important;
+  }
+  .header-scorrimento > div:nth-of-type(2) button {
+    display: none;
+  }
+
+  .swiper-comics-classic .swiper-button-next,
+  .swiper-comics-classic .swiper-button-prev {
+    background-color: rgba(255, 251, 251, 0.097);
+    padding: 3em 1em;
+    box-shadow: none;
+    border: none;
+  }
 }

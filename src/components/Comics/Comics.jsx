@@ -23,6 +23,7 @@ const Comics = () => {
   const comic = DataComics.find((comic) => comic.id === id);
   const [mode, setMode] = useState("scorrimento");
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [openMobileCard, setOpenMobileCard] = useState(null);
 
   //----REF----
   const scrollRef = useRef(null);
@@ -56,6 +57,19 @@ const Comics = () => {
   if (!comic) {
     return <h1>Comic not found</h1>;
   }
+
+  //mobile card
+  const toggleMobileCard = (cardName) => {
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) return;
+
+    if (openMobileCard === cardName) {
+      setOpenMobileCard(null);
+    } else {
+      setOpenMobileCard(cardName);
+    }
+  };
+
   return (
     <>
       <div className="comics-header">
@@ -82,17 +96,28 @@ const Comics = () => {
               damping: 15,
               delay: 1,
             }}
+            onClick={() => toggleMobileCard("personaggi")}
           >
             <h3 className="text-center">Personaggi</h3>
-            {comic.cast.map((character, index) => (
-              <div key={index} className="d-flex">
-                <img src={character.foto} alt={character.nome} />
-                <div>
-                  <strong>{character.nome}</strong>
-                  <p>{character.descrizione}</p>
-                </div>
+
+            {(openMobileCard === "personaggi" || window.innerWidth > 768) && (
+              <div className="character-list">
+                {comic.cast.map((character, index) => (
+                  <div
+                    key={index}
+                    className="d-flex align-items-center gap-2 mb-2"
+                  >
+                    <img src={character.foto} alt={character.nome} />
+                    <div>
+                      <strong>{character.nome}</strong>
+                      {window.innerWidth > 768 && (
+                        <p className="mb-0">{character.descrizione}</p>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
           </motion.div>
 
           <motion.div
@@ -105,9 +130,13 @@ const Comics = () => {
               damping: 15,
               delay: 1.5,
             }}
+            onClick={() => toggleMobileCard("trama")}
           >
             <h3 className="text-center">Trama</h3>
-            <p>{comic.storyline}</p>
+
+            {(openMobileCard === "trama" || window.innerWidth > 768) && (
+              <p className="mt-2">{comic.storyline}</p>
+            )}
           </motion.div>
 
           <motion.div
@@ -120,18 +149,25 @@ const Comics = () => {
               damping: 15,
               delay: 2,
             }}
+            onClick={() => toggleMobileCard("info")}
           >
             <h3 className="text-center">Info</h3>
-            <p>
-              Anno di uscita: <strong>{comic.anno}</strong>
-            </p>
-            <p>
-              Prodotto in <strong>{comic.produzione}</strong>
-            </p>
-            <p>
-              Autore <strong>Pizzamafia</strong>
-            </p>
+
+            {(openMobileCard === "info" || window.innerWidth > 768) && (
+              <div className="info-details mt-2">
+                <p>
+                  Anno di uscita: <strong>{comic.anno}</strong>
+                </p>
+                <p>
+                  Prodotto in <strong>{comic.produzione}</strong>
+                </p>
+                <p>
+                  Autore <strong>Pizzamafia</strong>
+                </p>
+              </div>
+            )}
           </motion.div>
+
           <motion.div
             className="card-info comics-extra"
             initial={{ y: -200, opacity: 0 }}
@@ -142,9 +178,15 @@ const Comics = () => {
               damping: 15,
               delay: 2.5,
             }}
+            onClick={() => toggleMobileCard("extra")}
           >
             <h3 className="text-center">Extra</h3>
-            <button>Download</button>
+
+            {(openMobileCard === "extra" || window.innerWidth > 768) && (
+              <div className="extra-content mt-2 text-center">
+                <button>Download</button>
+              </div>
+            )}
           </motion.div>
         </div>
       </div>
@@ -237,8 +279,8 @@ const Comics = () => {
             }}
           >
             <Container className="comics-classic-body d-block" ref={swiperRef}>
-              <div className="header-classic" onClick={toggleFullscreen}>
-                <button>
+              <div className="header-classic">
+                <button onClick={toggleFullscreen}>
                   {" "}
                   <img
                     src={isFullscreen ? exitfs : fullscreen}
