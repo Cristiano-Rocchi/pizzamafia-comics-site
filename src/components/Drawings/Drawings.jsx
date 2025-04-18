@@ -21,10 +21,16 @@ const Drawings = () => {
 
   // FUNZIONI
   const handleDrawingsClick = (drawing) => {
-    setSelectedDrawings(drawing);
-    setShowDetails(true);
-    setDrawingTitle(drawing.titolo);
-    setDrawingId(drawing.id);
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile) {
+      openFullscreen(drawing.img);
+    } else {
+      setSelectedDrawings(drawing);
+      setShowDetails(true);
+      setDrawingTitle(drawing.titolo);
+      setDrawingId(drawing.id);
+    }
   };
 
   const openFullscreen = (imgSrc) => {

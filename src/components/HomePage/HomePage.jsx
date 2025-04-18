@@ -84,7 +84,7 @@ const Homepage = () => {
                 Invece io l'ho fatto ! <br />
                 <br />
                 <strong>
-                  Pizzamafia è discorsi strani su disegni brutti,
+                  Pizzamafia è discorsi incazzati su disegni storti,
                   <br />
                   Qui dentro non c'è arte. <br />
                   Vai via..
@@ -299,7 +299,7 @@ const Homepage = () => {
           <Row className="justify-content-between align-items-center">
             <Col md={4}>
               <p className="footer-title">Pizzamafia</p>
-              <p className="footer-sub">Fumetti Brutti da sempre</p>
+              <p className="footer-sub">Fumetti Incazzati da sempre</p>
             </Col>
             <Col md={4} className="text-center">
               <p className="footer-links">

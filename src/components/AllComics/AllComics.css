@@ -167,6 +167,7 @@
   }
 
   .title-comics div {
-    transform: translateX(180px);
+    position: relative;
+    left: 50%;
   }
 }
