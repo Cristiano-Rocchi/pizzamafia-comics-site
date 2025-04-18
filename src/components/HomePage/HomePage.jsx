@@ -308,6 +308,7 @@ const Homepage = () => {
           </Row>
         )}
       </Container>
+      {/* --------------FOOTER------------ */}
       <footer className="footer">
         <Container>
           <Row className="justify-content-between align-items-center">
