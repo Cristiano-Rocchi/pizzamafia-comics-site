@@ -93,8 +93,7 @@ const Homepage = () => {
             </div>
           </Col>
         </Row>
-
-        <Col className="sect-title" xs={12}>
+        {/* <Col className="sect-title" xs={12}>
           <div className="line-home1"></div>
           <h1
             onClick={() => {
@@ -123,7 +122,8 @@ const Homepage = () => {
           </h1>
 
           <div className="line-home2"></div>
-        </Col>
+        </Col> */}
+
         {/* --------------COMICS------------ */}
         {activeSection === "comics" ? (
           <Row className="sect-works d-flex justify-content-end">
