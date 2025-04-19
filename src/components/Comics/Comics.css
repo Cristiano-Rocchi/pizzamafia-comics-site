@@ -226,3 +226,14 @@
   object-fit: contain;
   user-select: none;
 }
+@media (min-width: 768px) {
+  .other-comics {
+    display: none;
+  }
+}
+
+.header-scorrimento {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}

@@ -245,7 +245,7 @@ const Comics = () => {
               }`}
               ref={swiperRef}
             >
-              <div className="header-scorrimento d-flex justify-content-between sticky-top">
+              <div className="header-scorrimento d-flex justify-content-between">
                 <div className="d-flex ms-3 pt-2" onClick={toggleFullscreen}>
                   <button>
                     {" "}
@@ -257,30 +257,34 @@ const Comics = () => {
                     {isFullscreen ? " Esci da fullscreen" : " Fullscreen"}
                   </button>
                 </div>
-                <div
-                  className="d-flex me-3 pt-2"
+              </div>
+
+              <div className="text-center">
+                <img className="fumetto" src={comic.scrollMode} alt="fumetto" />
+              </div>
+              <div className="text-center my-5">
+                <button
+                  className="fs-3"
                   onClick={() => {
                     if (isFullscreen && swiperRef.current) {
-                      // Scroll modalità fullscreen
                       swiperRef.current.scrollTo({
                         top: 0,
                         behavior: "smooth",
                       });
                     } else {
-                      // Scroll modalità normale
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }
                   }}
                 >
-                  <button>
-                    <img className="up-icon" src={up} alt="" />
-                    torna all'inizio
-                  </button>
-                </div>
+                  <img className="up-icon" src={up} alt="" />
+                  torna all'inizio
+                </button>
               </div>
 
-              <div className="text-center">
-                <img className="fumetto" src={comic.scrollMode} alt="fumetto" />
+              <div className="other-comics mt-3 text-center fs-1">
+                <a href="/comics">
+                  <button>Leggi altri fumetti</button>
+                </a>
               </div>
             </Container>
           </motion.div>
@@ -343,6 +347,7 @@ const Comics = () => {
           </motion.div>
         )}
       </div>
+      {/* MODAL DOWNLOAD PDF */}
       <Modal show={showModal} onHide={handleCancelDownload} centered>
         <Modal.Header closeButton>
           <Modal.Title>Scaricare "{comic.titolo}"?</Modal.Title>
