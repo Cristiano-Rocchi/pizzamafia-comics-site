@@ -96,24 +96,34 @@ const Homepage = () => {
 
         <Col className="sect-title" xs={12}>
           <div className="line-home1"></div>
-
           <h1
+            onClick={() => {
+              if (window.innerWidth <= 1300) {
+                navigate("/comics");
+              } else {
+                setActiveSection("comics");
+              }
+            }}
             className={activeSection === "comics" ? "active" : ""}
-            onClick={() => setActiveSection("comics")}
           >
             Sfoglia i Fumetti
           </h1>
 
           <h1
+            onClick={() => {
+              if (window.innerWidth <= 1300) {
+                navigate("/drawings");
+              } else {
+                setActiveSection("drawings");
+              }
+            }}
             className={activeSection === "drawings" ? "active" : ""}
-            onClick={() => setActiveSection("drawings")}
           >
             Sfoglia i Disegni
           </h1>
 
           <div className="line-home2"></div>
         </Col>
-
         {/* --------------COMICS------------ */}
         {activeSection === "comics" ? (
           <Row className="sect-works d-flex justify-content-end">
