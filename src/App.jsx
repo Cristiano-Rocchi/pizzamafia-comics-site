@@ -9,6 +9,7 @@ import AllComics from "./components/AllComics/AllComics";
 import Drawings from "./components/Drawings/Drawings";
 import NotFound from "./components/NotFound/NotFound";
 import Download from "./components/Download/Download";
+import VideoPage from "./components/VideoPage/VideoPage";
 
 function AppContent() {
   const location = useLocation();
@@ -23,7 +24,8 @@ function AppContent() {
         <Route path="/comics/:id" element={<Comics />} />
         <Route path="/drawings" element={<Drawings />} />
         <Route path="/characters" element={<Characters />} />
-        <Route path="/download" element={<Download />} />{" "}
+        <Route path="/download" element={<Download />} />
+        <Route path="/video-finale" element={<VideoPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

@@ -229,7 +229,7 @@ const DataComics = [
     produzione: "Digitale",
     scrollMode: peopleFuckedScroll,
     pdf: "/assets-download/people-are-fucked.pdf",
-    storyline: "bo",
+    storyline: "Il posto dove sono nato e cresciuto.",
     cast: [
       {
         nome: "Pizzamafia Bianco",
@@ -295,7 +295,8 @@ const DataComics = [
     produzione: "Digitale",
     scrollMode: odietamo,
     pdf: "/assets-download/odi-et-amo.pdf",
-    storyline: "bo",
+    storyline:
+      "Una semplice chiacchierata pomeridiana si trasforma in problemi esistenziali. Pensieri sul come affrontare l'era tecnologica, riflessioni sul peso delle parole e il peso dei sentimenti. non abbiamo scomodato Socrate ma 2 canne piu grosse del solito... forse ",
     cast: [
       {
         nome: "Pizzamafia Verde",

@@ -14,6 +14,18 @@
   gap: 30px;
 }
 
+.final-section h2 {
+  color: var(--color);
+}
+.final-section button {
+  background-color: var(--color);
+  border-color: black;
+}
+.final-section button:hover {
+  background-color: red;
+  border-color: black;
+  font-size: 1.1em;
+}
 /*stili card info*/
 .card-info {
   background: rgba(12, 12, 12, 0.8);
@@ -230,10 +242,4 @@
   .other-comics {
     display: none;
   }
-}
-
-.header-scorrimento {
-  position: sticky;
-  top: 0;
-  z-index: 10;
 }

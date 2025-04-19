@@ -258,13 +258,24 @@ const Comics = () => {
                   </button>
                 </div>
               </div>
-
               <div className="text-center">
                 <img className="fumetto" src={comic.scrollMode} alt="fumetto" />
               </div>
+              {comic.titolo === "Viaggio Interstellare" && (
+                <div className="final-section text-center my-5">
+                  <h2>Attenzione</h2>
+                  <h3>Questo è un fumetto interattivo</h3>
+                  <p>Guarda il finale animato per completare l'esperienza.</p>
+                  <a href="/video-finale">
+                    <button className="btn btn-primary mt-2">
+                      VAI AL VIDEO FINALE
+                    </button>
+                  </a>
+                </div>
+              )}
               <div className="text-center my-5">
                 <button
-                  className="fs-3"
+                  className="fs-5"
                   onClick={() => {
                     if (isFullscreen && swiperRef.current) {
                       swiperRef.current.scrollTo({
@@ -280,12 +291,11 @@ const Comics = () => {
                   torna all'inizio
                 </button>
               </div>
-
               <div className="other-comics mt-3 text-center fs-1">
                 <a href="/comics">
                   <button>Leggi altri fumetti</button>
                 </a>
-              </div>
+              </div>{" "}
             </Container>
           </motion.div>
         )}
@@ -333,7 +343,6 @@ const Comics = () => {
                 {comic.classicMode.map((foto, index) => (
                   <SwiperSlide className="slide-classic" key={index}>
                     <div className="swiper-zoom-container">
-                      {" "}
                       <img
                         src={foto.img}
                         alt={`comic-${index}`}
@@ -342,6 +351,23 @@ const Comics = () => {
                     </div>
                   </SwiperSlide>
                 ))}
+
+                {comic.titolo === "Viaggio Interstellare" && (
+                  <SwiperSlide className="slide-classic">
+                    <div className="swiper-zoom-container d-flex flex-column align-items-center justify-content-center text-center p-4 final-section">
+                      <h2>Attenzione</h2>
+                      <h3>Questo è un fumetto interattivo</h3>
+                      <p>
+                        Guarda il finale animato per completare l'esperienza.
+                      </p>
+                      <a href="/video-finale">
+                        <button className="btn btn-primary mt-3">
+                          VAI AL VIDEO FINALE
+                        </button>
+                      </a>
+                    </div>
+                  </SwiperSlide>
+                )}
               </Swiper>
             </Container>
           </motion.div>
