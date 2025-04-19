@@ -93,36 +93,26 @@ const Homepage = () => {
             </div>
           </Col>
         </Row>
-        {/* <Col className="sect-title" xs={12}>
+
+        <Col className="sect-title" xs={12}>
           <div className="line-home1"></div>
-          <h1
-            onClick={() => {
-              if (window.innerWidth <= 1300) {
-                navigate("/comics");
-              } else {
-                setActiveSection("comics");
-              }
-            }}
+
+          <button
             className={activeSection === "comics" ? "active" : ""}
+            onClick={() => setActiveSection("comics")}
           >
             Sfoglia i Fumetti
-          </h1>
+          </button>
 
-          <h1
-            onClick={() => {
-              if (window.innerWidth <= 1300) {
-                navigate("/drawings");
-              } else {
-                setActiveSection("drawings");
-              }
-            }}
+          <button
             className={activeSection === "drawings" ? "active" : ""}
+            onClick={() => setActiveSection("drawings")}
           >
             Sfoglia i Disegni
-          </h1>
+          </button>
 
           <div className="line-home2"></div>
-        </Col> */}
+        </Col>
 
         {/* --------------COMICS------------ */}
         {activeSection === "comics" ? (

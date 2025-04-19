@@ -86,7 +86,7 @@
     justify-content: center;
     gap: 50px;
     margin-top: 70px;
-    h1 {
+    button {
       border: 1px solid black;
       color: #e0e0e0;
       display: inline-block;
@@ -94,13 +94,13 @@
       transform: rotate(-6deg);
       font-size: 2em;
     }
-    h1.active {
+    button.active {
       background-color: #e0e0e0;
       box-shadow: 0px 0px 30px 0px rgba(224, 224, 224, 0.92);
       color: black;
       border-color: black;
     }
-    h1:hover {
+    button:hover {
       cursor: pointer;
     }
     .line-home1 {
