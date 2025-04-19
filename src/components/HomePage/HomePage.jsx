@@ -97,19 +97,19 @@ const Homepage = () => {
         <Col className="sect-title" xs={12}>
           <div className="line-home1"></div>
 
-          <button
+          <h1
             className={activeSection === "comics" ? "active" : ""}
             onClick={() => setActiveSection("comics")}
           >
             Sfoglia i Fumetti
-          </button>
+          </h1>
 
-          <button
+          <h1
             className={activeSection === "drawings" ? "active" : ""}
             onClick={() => setActiveSection("drawings")}
           >
             Sfoglia i Disegni
-          </button>
+          </h1>
 
           <div className="line-home2"></div>
         </Col>
