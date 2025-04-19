@@ -79,6 +79,8 @@ import vecchio4 from "../assets/img/vecchioCinese/classic/4.png";
 import vecchio5 from "../assets/img/vecchioCinese/classic/5.png";
 import vecchio6 from "../assets/img/vecchioCinese/classic/6.png";
 
+// PDF
+
 const DataComics = [
   {
     id: "viaggio-interstellare",
@@ -87,6 +89,7 @@ const DataComics = [
     anno: "2021",
     produzione: "Digitale",
     scrollMode: viaggioIntStellar,
+    pdf: "/assets-download/viaggio-interstellare.pdf",
     storyline:
       "Un intervista che nessuno ha chiesto? Un viaggio intergalattico? Un tributo? Oppure un flusso di coscenza? Niente di tutto questo... è solo pizzamafia che parla!",
     cast: [
@@ -174,6 +177,7 @@ const DataComics = [
     anno: "2019",
     produzione: "Digitale",
     scrollMode: vecchioCinese,
+    pdf: "/assets-download/vecchio-cinese-random.pdf",
     storyline:
       "Ti hanno assegnato a random un nonno orientale. devi solo seguire i suoi consigli",
     cast: [
@@ -224,6 +228,7 @@ const DataComics = [
     anno: "2017",
     produzione: "Digitale",
     scrollMode: peopleFuckedScroll,
+    pdf: "/assets-download/people-are-fucked.pdf",
     storyline: "bo",
     cast: [
       {
@@ -289,6 +294,7 @@ const DataComics = [
     anno: "2022",
     produzione: "Digitale",
     scrollMode: odietamo,
+    pdf: "/assets-download/odi-et-amo.pdf",
     storyline: "bo",
     cast: [
       {

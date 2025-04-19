@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import DataComics from "../../Data/DataComics";
-import { Container } from "react-bootstrap";
+import { Container, Modal } from "react-bootstrap";
 import "./Comics.css";
 //icons
 import exitfs from "../../assets/icons/exitfullscreen.svg";
@@ -12,7 +12,7 @@ import up from "../../assets/icons/graffitiarrowsvg.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation, Zoom } from "swiper/modules";
-import { EffectCreative } from "swiper/modules";
+
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
 import "swiper/css/effect-creative";
@@ -24,6 +24,7 @@ const Comics = () => {
   const [mode, setMode] = useState("scorrimento");
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [openMobileCard, setOpenMobileCard] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   //----REF----
   const scrollRef = useRef(null);
@@ -68,6 +69,24 @@ const Comics = () => {
     } else {
       setOpenMobileCard(cardName);
     }
+  };
+
+  //download pdf
+  const handleDownloadClick = () => {
+    setShowModal(true);
+  };
+
+  const handleConfirmDownload = () => {
+    setShowModal(false);
+    // Avvia il download
+    const link = document.createElement("a");
+    link.href = comic.pdf;
+    link.download = "";
+    link.click();
+  };
+
+  const handleCancelDownload = () => {
+    setShowModal(false);
   };
 
   return (
@@ -184,7 +203,7 @@ const Comics = () => {
 
             {(openMobileCard === "extra" || window.innerWidth > 768) && (
               <div className="extra-content mt-2 text-center">
-                <button>Download</button>
+                <button onClick={handleDownloadClick}>Download</button>
               </div>
             )}
           </motion.div>
@@ -324,6 +343,22 @@ const Comics = () => {
           </motion.div>
         )}
       </div>
+      <Modal show={showModal} onHide={handleCancelDownload} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Scaricare "{comic.titolo}"?</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Il fumetto verrà scaricato in formato PDF. Sei sicuro?
+        </Modal.Body>
+        <Modal.Footer>
+          <button className="btn btn-secondary" onClick={handleCancelDownload}>
+            Annulla
+          </button>
+          <button className="btn btn-primary" onClick={handleConfirmDownload}>
+            Scarica
+          </button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };

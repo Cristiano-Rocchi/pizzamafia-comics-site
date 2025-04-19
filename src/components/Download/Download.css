@@ -1,0 +1,63 @@
+.download-page {
+  padding: 2em 1em;
+  color: #e0e0e0;
+  background-color: rgba(12, 12, 12, 0.8);
+  backdrop-filter: blur(25px);
+  font-family: "AnimeFont", sans-serif;
+  min-height: 100vh;
+}
+
+.download-title {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--color);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.download-card {
+  border: 2px solid var(--color);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.download-cover {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.comic-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.download-btn {
+  background-color: #e0e0e0;
+  color: black;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.2s ease-in-out;
+  display: inline-block;
+}
+
+.download-btn:hover {
+  background-color: black;
+  color: #e0e0e0;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+}

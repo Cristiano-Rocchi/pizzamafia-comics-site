@@ -2,16 +2,46 @@
   color: #e0e0e0;
   font-family: "AnimeFont", sans-serif;
   margin-top: 90px;
-  h5 {
-    position: relative;
-    right: 130px;
-    font-size: 1.3em;
+}
+
+.not-found-container h5 {
+  position: relative;
+  right: 130px;
+  font-size: 1.3em;
+}
+
+.not-found-container button {
+  font-size: 2em;
+  letter-spacing: 7px;
+  padding: 5px 30px;
+  margin-top: 70px;
+  margin-left: 40px;
+}
+
+/* ✅ Responsive per dispositivi piccoli */
+@media screen and (max-width: 768px) {
+  .not-found-container {
+    text-align: center;
+    margin-top: 50px;
   }
-  button {
-    font-size: 2em;
-    letter-spacing: 7px;
-    padding: 5px 30px;
-    margin-top: 70px;
-    margin-left: 40px;
+
+  .not-found-container h5 {
+    right: 0;
+    font-size: 1.2em;
+    margin-top: 20px;
+  }
+
+  .not-found-container button {
+    font-size: 1.3em;
+    margin-left: 0;
+    margin-top: 30px;
+    padding: 10px 20px;
+    letter-spacing: 5px;
+  }
+
+  .not-found-container img {
+    width: 80%;
+    max-width: 200px;
+    margin-top: 20px;
   }
 }
